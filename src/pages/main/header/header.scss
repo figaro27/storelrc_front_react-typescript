@@ -1,34 +1,47 @@
+@import 'styles/typography.scss';
+
 .header-nav  {
-    background-color: rgba(0,0,0,0.5);
-    font-size: 1.2em;
-    padding: 0;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 1.2em;
+  padding: 0;
+  transition: .5s ease opacity;
 }
 
+.nav-link {
+  @include typography(xl-1, none);
+  color: white;
+}
 .dropdown-menu {
-    background-color: rgba(0,0,0,0.5);
-    font-size: 1em;
+  background-color: rgba(0,0,0,0.5);
+  font-size: 1em;
 }
 
 .dropdown-item{
-    color:white;
+  color:white;
 }
 
 .dropdown-item:hover{
-    background-color: rgba(0,0,0,0.5);
-    color:grey;
+  background-color: rgba(0,0,0,0.5);
+  color:grey;
 }
 
 .header-img{
-    object-position:50% 50%;
-    width:132px;
-    height:68px;
-    object-fit:cover
+  object-position:50% 50%;
+  width:132px;
+  height:68px;
+  object-fit:cover
 }
 
 .nav-link, .nav-item{
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-    padding: 0;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  padding: 0;
 }
 
+.dropdown-toggle:after {
+  content: none;
+}
 
+.hide-navbar {
+  opacity: 0;
+}
