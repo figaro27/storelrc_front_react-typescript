@@ -1,19 +1,13 @@
 // src/components/main.tsx
 import React from 'react';
-import { Button } from 'react-bootstrap'
-
-import { Parallax } from './parallax'
-import { BarParallax } from './barparallax'
-import { PhotoGallery } from './photogallery'
-import { OurService } from './ourservice'
-
+import { Button, Navbar } from 'react-bootstrap'
+import { BarParallax, Parallax, PhotoGallery, OurService } from './components'
 import './home.scss'
 
 export const Home = () => {
   return (
     <>
       <Parallax />
-
       <h2 className="home-font2">
         <br/>Store Led<br/>
         Expert des enseignes lumineuses
@@ -33,11 +27,9 @@ export const Home = () => {
       <div style={{ textAlign:'center'}}>
         <Button variant="outline-light" className="home-btn-en">En savoir plus</Button>
       </div>
-
       <BarParallax/>
       <PhotoGallery />
       <OurService />
-
     </>
  );
 };
