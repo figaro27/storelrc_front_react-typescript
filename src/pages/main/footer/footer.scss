@@ -2,8 +2,7 @@
     border-top: 3px dotted rgba(255, 255, 255, 0.6);
 }
 .footer-contact-text{
-    font-family: sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     text-align:left;
     color: white;
 }
@@ -16,14 +15,15 @@
 
 .footer-contact-img{
     margin-bottom: 1em;
-    width:150px;
-    height:68px;
+    width:130px;
+    height:80px;
     object-fit:cover
 }
 
 .footer-link {
-    font-size: 25px;
+    font-size: 21px;
     color: white;
+    opacity: 0.8;
 }
 .footer-link:hover {
     color: white;
@@ -40,6 +40,13 @@
 .footer-contact-section {
     padding-left: 4em;
     padding-right: 4em;
+    float: right;
+}
+
+.footer-social-section {
+    padding-left: 4em;
+    padding-right: 4em;
+    float: left;
 }
 
 .footer-outsite-img-section{

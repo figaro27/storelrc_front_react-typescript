@@ -40,7 +40,7 @@ export const Footer = () => {
         </Col>
 
         <Col md={4}>
-          <div className="footer-contact-section">
+          <div className="footer-social-section">
             <p className="footer-contact-text">
               Retrouvez-nous sur :
             </p>
