@@ -9,7 +9,7 @@ import { Store } from '../store'
 import {StoreDetail } from '../store_detail'
 
 import './index.scss'
-export const Main = () => {
+export const Main = () => {  
  return (
     <Router>
       <Header />
@@ -22,7 +22,6 @@ export const Main = () => {
           <Route exact path="/store/:name" component={StoreDetail}/>
         </Switch>
       </div>
-
       <Footer />
   </Router>
  );
