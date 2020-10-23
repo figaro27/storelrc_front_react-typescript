@@ -1,0 +1,21 @@
+@import 'styles/typography.scss';
+.home-photogallery-section {
+    padding: 4em 0em 2em 0em;
+    text-align: center;
+}
+
+.home-photogallery-text {
+    color:white;
+    text-align: center;
+    font-family: $fontPTSans;
+    margin-bottom: 2.5em;
+    .home-photogallery-text-title {
+        font-size: 37px;
+    }
+    .home-photogallery-text-text {
+        font-size: 21px;
+        opacity: 0.9;
+    }
+}
+
+
