@@ -6,7 +6,7 @@ import { Footer } from './footer'
 import { Home } from '../home'
 import { Lambrequin } from '../lambrequin'
 import './index.scss'
-export const Main = () => {
+export const Main = () => {  
  return (
     <Router>
       <Header />
@@ -17,7 +17,6 @@ export const Main = () => {
           <Route exact path="/lambrequin-lumineux" component={Lambrequin}/>
         </Switch>
       </div>
-
       <Footer />
   </Router>
  );
