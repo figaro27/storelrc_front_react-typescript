@@ -1,13 +1,11 @@
 // src/components/main.tsx
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
 
 import './parallax.scss';
 
 export const Parallax = () => {
   const image1 = "https://static.wixstatic.com/media/e49d9d_afa49dd49a924af5962574840e9f5f48~mv2.jpg";
-  const image2 ="https://static.wixstatic.com/media/e49d9d_afa49dd49a924af5962574840e9f5f48~mv2.jpg/v1/fill/w_2920,h_1080,al_t,q_85,usm_0.66_1.00_0.01/e49d9d_afa49dd49a924af5962574840e9f5f48~mv2.webp"
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
@@ -25,7 +23,7 @@ export const Parallax = () => {
     <div className="home-parallax">
       <section className="home-parallax-section">
         <img
-          src="https://static.wixstatic.com/media/e49d9d_afa49dd49a924af5962574840e9f5f48~mv2.jpg"
+          src={image1}
           alt="test"
           className="home-parallax_img"
           style={{

@@ -27,7 +27,7 @@ return (
           <Nav.Link href="/lambrequin-lumineux">Lambrequin lumineux</Nav.Link>
 
           <NavDropdown title="Nos Services" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/stores-exterieurs">Stores Exterieurs</NavDropdown.Item>
+            <NavDropdown.Item href="/store">Stores Exterieurs</NavDropdown.Item>
             <NavDropdown.Item href="/pergolas">Pergolas</NavDropdown.Item>
             <NavDropdown.Item href="/enseignes">Enseignes</NavDropdown.Item>
             <NavDropdown.Item href="/claustras">Claustras</NavDropdown.Item>
