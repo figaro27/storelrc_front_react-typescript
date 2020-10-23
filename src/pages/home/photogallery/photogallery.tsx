@@ -1,9 +1,6 @@
 // src/components/main.tsx
 import React, { useState, useCallback } from "react";
-import { render } from "react-dom";
 import Gallery from "react-photo-gallery";
-import Carousel, { Modal, ModalGateway } from "react-images";
-import { SortableContainer, SortableElement } from "react-sortable-hoc";
 import { photos } from "./photos";
 
 import './photogallery.scss'
