@@ -24,7 +24,7 @@ export const Parallax: React.SFC<ParallaxProps> = (props) => {
           className="store-parallax_img"
           style={{
 
-            filter: `brightness(80%)`
+            filter: `brightness(100%)`
           }}
           />
           <div className="store-parallax_text_section">
@@ -32,6 +32,7 @@ export const Parallax: React.SFC<ParallaxProps> = (props) => {
             </h1>
           </div>
       </section>
+
 
     </div>
     </>

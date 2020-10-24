@@ -7,9 +7,10 @@ import { Home } from '../home'
 import { Lambrequin } from '../lambrequin'
 import { Store } from '../store'
 import {StoreDetail } from '../store_detail'
+import { Pergola } from '../pergola';
 
 import './index.scss'
-export const Main = () => {  
+export const Main = () => {
  return (
     <Router>
       <Header />
@@ -20,6 +21,7 @@ export const Main = () => {
           <Route exact path="/lambrequin-lumineux" component={Lambrequin}/>
           <Route exact path="/store" component={Store}/>
           <Route exact path="/store/:name" component={StoreDetail}/>
+          <Route exact path="/pergola" component={Pergola}/>
         </Switch>
       </div>
       <Footer />
