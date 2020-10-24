@@ -25,7 +25,8 @@
     "react-scripts": "3.4.4",
     "react-scroll-parallax": "^2.3.4",
     "react-sortable-hoc": "^1.11.0",
-    "typescript": "^3.8"
+    "typescript": "^3.8",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/webfontloader": "^1.6.32"
   }
 }
