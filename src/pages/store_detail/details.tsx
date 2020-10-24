@@ -91,5 +91,22 @@ export const details: {[index: string]:any} = {
         text1: "Une solution idéale pour l'ombrage de vos fenêtres et balcons",
         text2: "Le store à projection, appelé également &quot;store à l'italienne&quot;, est un store d'extérieur particulièrement efficace contre la chaleur. Intemporel, il habillera de manière élégante vos fenêtres.<br/><br/>Grâce à sa toile en biais, il permet de laisser passer l'air et entrer la lumière, tout en préservant des rayons du soleil. L’angle de chute de 0° à 170° peut être librement choisi, permettant ainsi une combinaison de protection solaire et d’utilisation de la lumière du jour. Les bras en aluminium agencés latéralement sont dotés de ressorts internes garantissant une tension optimale de la toile et empêchant que celle-ci ne flotte au vent. Son installation est simple, en façade ou sous dalle. L’entraînement se fait aisément par treuil ou moteur électrique, en option<br/><br/>N'hésitez pas à nous contacter pour plus d'informations, ou pour obtenir un devis de la part de nos équipes."
      },
+     'bioclimatique':{
+        root_url: '/pergola',
+        root_text: 'Pergolas',
+        image:"https://static.wixstatic.com/media/e49d9d_57ff6ebd20b14963bbd5fcca8dae94d5~mv2.png",
+        slides:[
+            'https://static.wixstatic.com/media/e49d9d_00615af9e3594a3d9b71471d5addea1a~mv2.png',
+            'https://static.wixstatic.com/media/e49d9d_d1ae89f415744bc7b558a73b0b4f34b2~mv2.jpg',
+            'https://static.wixstatic.com/media/e49d9d_3b7528d0d13840dcb3c9f6a89c6c9025~mv2.jpg',
+            'https://static.wixstatic.com/media/e49d9d_aa2dbc83790c412a8c76f1e3b73ab94d~mv2.jpg',
+        ],
+        title: 'Pergola bioclimatique',
+        text1: "Structure design et robuste, idéal pour vos extérieurs",
+        text2: "La pergola bioclimatique est conçue pour réguler le microclimat de la pièce, tout en créant une aération naturelle.<br/><br/>En fonction de l'orientation des lames, elle permet une protection partielle ou totale du soleil, une ventilation optimale, et un abri étanche contre la pluie.<br/><br/>Véritable prolongement de votre extérieur, son design permet épuré apportera un certain charme à votre extérieur.<br/><br/>Pouvant être adossée au mur ou indépendante, elle s'adapte à facilement à tout type de jardin ou piscine.<br/><br/>Contactez-nous pour plus d'informations, et obtenir un devis personnalisé par l'un de nos conseillers."
+     },
+
+
+
 }
 

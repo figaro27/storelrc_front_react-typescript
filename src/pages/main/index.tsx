@@ -22,6 +22,7 @@ export const Main = () => {
           <Route exact path="/store" component={Store}/>
           <Route exact path="/store/:name" component={StoreDetail}/>
           <Route exact path="/pergola" component={Pergola}/>
+          <Route exact path="/pergola/:name" component={StoreDetail}/>
         </Switch>
       </div>
       <Footer />
