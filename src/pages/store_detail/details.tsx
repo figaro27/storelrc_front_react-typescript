@@ -37,7 +37,8 @@ export const details: {[index: string]:any} = {
     'pantographe-croisillons':{
         root_url: '/store',
         root_text: 'Stores extérieurs',
-        image: "https://static.wixstatic.com/media/e49d9d_f02584f12aa44bf99aeb99a1a5f759c2~mv2.jpg",
+        //image: "https://static.wixstatic.com/media/e49d9d_f02584f12aa44bf99aeb99a1a5f759c2~mv2.jpg",
+        image:"https://static.wixstatic.com/media/e49d9d_f02584f12aa44bf99aeb99a1a5f759c2~mv2.jpg/v1/fill/w_1200,h_255,al_t,q_80/e49d9d_f02584f12aa44bf99aeb99a1a5f759c2~mv2.webp",
         slides:[
             'https://static.wixstatic.com/media/e49d9d_78c33bcf37a148f8afedf1fb875270a4~mv2.jpg',
             'https://static.wixstatic.com/media/e49d9d_33d438c34dcb4de4b4e118747e165b54~mv2.jpg',
