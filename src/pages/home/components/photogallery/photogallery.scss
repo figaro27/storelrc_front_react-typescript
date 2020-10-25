@@ -19,15 +19,21 @@
     }
 }
 
-.react-photo-gallery--gallery {
+.ReactGridGallery{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content:center;
+}
+
+
+.ReactGridGallery_tile-viewport {
     img {
       width:400px;
       height: 300px;
       transition: transform 500ms ease;
       &:hover {
+        fade: 0.7;
         transform: scale(1.1);
     }
   }
 }
-
-
