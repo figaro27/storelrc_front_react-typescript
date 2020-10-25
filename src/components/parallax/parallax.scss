@@ -1,0 +1,39 @@
+
+.store-parallax {
+    text-align: center;
+}
+.store-parallax-section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.store-parallax_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.store-parallax_text_section{
+    color: white;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.store-parallax_text {
+    position: relative;
+    font-size: 2.8em;
+}
+
+@keyframes ani_text_fade_in {
+    0%   { right: -400px; }
+    100%  { right: 0px; }
+}

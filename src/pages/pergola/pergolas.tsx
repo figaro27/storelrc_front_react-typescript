@@ -7,6 +7,6 @@ export const pergolas = [
     {
         src: "https://static.wixstatic.com/media/e49d9d_0e852e84e4c6464e9637867ca1572761~mv2.png",
         title: "Pergola toile",
-        url: "/pergola/pergola-toile",
+        url: "/pergola/toile",
     },
 ]

@@ -8,7 +8,6 @@ import { Container, Row, Col, Button, Carousel, Image } from 'react-bootstrap';
 
 import './store_detail.scss';
 import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
-
 interface DetailParams {
   name: string;
 }
@@ -28,44 +27,50 @@ class Detail extends React.Component<DetailsProps, any> {
       detail = details[name]
       return (
         <div>
-          <Parallax title={detail.title} image={detail.image} />
-          <Container style={{marginTop:'1em'}}>
+        <Parallax title={detail.title} image={detail.image} />
+        <Container style={{marginTop:'1em'}}>
+          { detail.root_text != '' &&
+            <>
             <a href={detail.root_url} className="store-detail-link">{detail.root_text}</a>
             <span className="store-detail-link"> &gt; {detail.title}</span>
-            <div style={{marginTop:'2em', textAlign:'center'}}>
-              <h2 style={{color:'white'}}>{detail.title}</h2>
-              <p style={{color:'white', fontSize:'1.4em'}}>{detail.text1}</p>
-            </div>
-            <Row style={{marginTop:'3em', marginBottom:'1.5em'}}>
-              <Col md={5} style={{textAlign:'center'}}>
-                <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
-                <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
-              </Col>
-              <Col md={7} style={{paddingRight:'2em', paddingLeft:'2em'}}>
-                <div className="lambrequin-carousel-section" >
-                  <Carousel controls={false}>
-                    {detail.slides.map( image => (
+            </>
+          }
 
-                    <Carousel.Item>
-                      <img
-                        className="d-block w-100"
-                        src={image}
-                        alt="First slide"
-                        width="100%" height="400em"
-                      />
-                    </Carousel.Item>
+          <div style={{marginTop:'2em', textAlign:'center'}}>
+            <h2 style={{color:'white'}}>{detail.title}</h2>
+            <p style={{color:'white', fontSize:'1.4em'}}>{detail.text1}</p>
+          </div>
+          <Row style={{marginTop:'3em', marginBottom:'1.5em'}}>
+            <Col md={5} style={{textAlign:'center'}}>
+              <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
+            </Col>
+            <Col md={7} style={{paddingRight:'2em', paddingLeft:'2em'}}>
+              <div className="lambrequin-carousel-section" >
+                <Carousel controls={false}>
+                  {detail.slides.map( image => (
 
-                    ))}
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src={image}
+                      alt="First slide"
+                      width="100%" height="400em"
+                    />
+                  </Carousel.Item>
 
-                  </Carousel>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      );
-    }
+                  ))}
+
+                </Carousel>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
   }
-}
 
+  return <></>
+}
+}
 export const StoreDetail = Detail;
