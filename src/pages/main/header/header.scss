@@ -2,13 +2,13 @@
 
 .header-nav  {
   background-color: rgba(0,0,0,0.5);
-  font-size: 1.2em;
+  font-size: 17px;
   padding: 0;
   transition: .5s ease opacity;
 }
 
 .nav-link {
-  @include typography(xl-1, none);
+  @include typography(lg, none);
   color: white;
 }
 .dropdown-menu {
@@ -30,6 +30,10 @@
   width:132px;
   height:68px;
   object-fit:cover
+}
+
+.header__button {
+  margin-left: 32px;
 }
 
 .nav-link, .nav-item{
