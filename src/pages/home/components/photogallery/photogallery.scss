@@ -11,11 +11,23 @@
     margin-bottom: 2.5em;
     .home-photogallery-text-title {
         font-size: 37px;
+        color: white;
     }
     .home-photogallery-text-text {
         font-size: 21px;
         opacity: 0.9;
     }
+}
+
+.react-photo-gallery--gallery {
+    img {
+      width:400px;
+      height: 300px;
+      transition: transform 500ms ease;
+      &:hover {
+        transform: scale(1.1);
+    }
+  }
 }
 
 
