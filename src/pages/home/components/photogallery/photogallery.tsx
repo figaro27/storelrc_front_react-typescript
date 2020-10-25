@@ -1,6 +1,6 @@
 // src/components/main.tsx
 import React, { useState, useCallback } from "react";
-import Gallery from "react-photo-gallery";
+import Gallery from "react-grid-gallery";
 import { photos } from "./photos";
 
 import './photogallery.scss'
@@ -13,7 +13,7 @@ return (
       <div className="home-photogallery-text-text"><span>Un savoir-faire acquis grâce à de nombreuses années d'expérience</span></div>
     </div>
     <div className="home-photogallery-gallery">
-      <Gallery photos={photos} margin={6}/>
+      <Gallery images={photos} />
     </div>
   </div>
  );
