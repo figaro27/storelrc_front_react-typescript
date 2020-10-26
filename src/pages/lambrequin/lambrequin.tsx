@@ -18,13 +18,13 @@ export const Lambrequin = () => {
   return (
     <>
       <Parallax />
-      <h1 style={{color:'white', textAlign:'center', margin:'1em'}}>
+      <h1 className="luminous__banner">
         Le lambrequin lumineux : soyez plus visible !
       </h1>
       <Container>
         <Row>
-          <Col md={6} style={{color:'white', fontSize:'1.15em', textAlign:'justify'}}>
-            <p>
+          <Col md={6} >
+            <p className="luminous__description">
               De plus en plus présent dans le paysage urbain, le lambrequin lumineux se veut original et très efficace pour attirer l'oeil des passants, et donc vous rendre plus visible la nuit.
               <br/><br/>
               Fonctionnant grâce à des LED intégrées directement dans votre store, le lambrequin lumineux est discret, et peu coûteux, tant par sa simple et rapide installation que par sa faible consommation d'énergie.
@@ -38,13 +38,11 @@ export const Lambrequin = () => {
 
           </Col>
           <Col md={6}>
-            <div className="lambrequin-carousel-section" >
-              <Carousel controls={false} >
+            <div className="luminous__carousel-section" >
+              <Carousel controls={false} fade={true} >
                 {images.map( image => (
-
                 <Carousel.Item>
                   <img
-                    className="d-block w-100"
                     src={image}
                     alt="First slide"
                     width="100%" height="380em"
@@ -52,21 +50,17 @@ export const Lambrequin = () => {
                 </Carousel.Item>
 
                 ))}
-
               </Carousel>
             </div>
             <div style={{ textAlign: 'center'}}>
-              <p style={{fontStyle:'italic', color:'white', fontSize:'1.1em', textAlign: 'justify', margin: '1em 0 0 0'}}>
+              <p className="luminous__carousel-description">
                 Contactez-nous pour plus d'informations sur nos services, nos tarifs, ou pour obtenir un devis ou un rendez-vous avec l'un de nos conseillers.</p>
-              <Button variant="outline-light" size="lg" style={{margin: '1.8em 0 0 0', fontSize:'1.5em'}}>Demande de devis</Button>
+                <Button variant="outline-light" size="lg" className="luminous__button">Demande de devis</Button>
             </div>
 
           </Col>
         </Row>
       </Container>
-
-
-
     </>
  );
 };
