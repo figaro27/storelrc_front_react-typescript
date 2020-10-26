@@ -15,6 +15,7 @@ import { Realisations } from '../realisations';
 import { References } from '../references';
 import { Contact } from '../contact';
 import { Faq } from '../faq';
+import { Sommes } from '../sommes';
 import './index.scss'
 export const Main = () => {
  return (
@@ -37,6 +38,7 @@ export const Main = () => {
           <Route exact path="/nos-references" component={References}/>
           <Route exact path="/contact" component={Contact}/>
           <Route exact path="/faq" component={Faq}/>
+          <Route exact path="/qui-sommes-nous" component={Sommes}/>
         </Switch>
       </div>
       <Footer />
