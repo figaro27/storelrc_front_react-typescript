@@ -12,6 +12,7 @@ import { Enseigne } from '../enseigne';
 import { Clasutras } from '../clasutras';
 import { Radiant } from '../radiant';
 import { Realisations } from '../realisations';
+import { References } from '../references';
 import './index.scss'
 export const Main = () => {
  return (
@@ -31,6 +32,7 @@ export const Main = () => {
           <Route exact path="/claustras" component={Clasutras}/>
           <Route exact path="/radiants" component={Radiant}/>
           <Route exact path="/nos-realisations" component={Realisations}/>
+          <Route exact path="/nos-references" component={References}/>
         </Switch>
       </div>
       <Footer />
