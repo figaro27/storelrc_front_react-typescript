@@ -28,7 +28,7 @@ class Detail extends React.Component<DetailsProps, any> {
       return (
         <div>
         <Parallax title={detail.title} image={detail.image} />
-        <Container style={{marginTop:'1em'}}>
+        <Container style={{marginTop:'1em'}} >
           { detail.root_text != '' &&
             <>
             <a href={detail.root_url} className="store-detail-link">{detail.root_text}</a>
@@ -40,14 +40,17 @@ class Detail extends React.Component<DetailsProps, any> {
             <h2 style={{color:'white'}}>{detail.title}</h2>
             <p style={{color:'white', fontSize:'1.4em'}}>{detail.text1}</p>
           </div>
+
           <Row style={{marginTop:'3em', marginBottom:'1.5em'}}>
+
             <Col md={5} style={{textAlign:'center'}}>
               <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
               <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
             </Col>
+
             <Col md={7} style={{paddingRight:'2em', paddingLeft:'2em'}}>
               <div className="lambrequin-carousel-section" >
-                <Carousel controls={false}>
+                <Carousel controls={false} fade={true}>
                   {detail.slides.map( image => (
 
                   <Carousel.Item>
