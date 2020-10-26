@@ -1,34 +1,24 @@
 @import 'styles/typography.scss';
-.home-photogallery-section {
+.realisations-photogallery-section {
     padding: 8em 0em 2em 0em;
     text-align: center;
 }
 
-.home-photogallery-text {
+.realisations-photogallery-text {
     color:white;
     text-align: center;
     font-family: $fontPTSans;
     margin-bottom: 2.5em;
-    .home-photogallery-text-title {
+    .realisations-photogallery-text-title {
         font-size: 48px;
         color: white;
     }
-    .home-photogallery-text-text {
+    .realisations-photogallery-text-text {
         font-size: 21px;
         opacity: 0.9;
     }
 }
 
-.react-photo-gallery--gallery {
-    img {
-      width:400px;
-      height: 300px;
-      transition: transform 500ms ease;
-      &:hover {
-        transform: scale(1.1);
-    }
-  }
-}
 
 .ReactGridGallery{
     flex-wrap: wrap;

@@ -27,12 +27,14 @@
 }
 
 
-.ReactGridGallery_tile-viewport {
-    img {
-      transition: transform 500ms ease;
-      &:hover {
-        fade: 0.7;
-        transform: scale(1.1);
+.home-photogallery__gallery {
+    .ReactGridGallery_tile-viewport {
+        img {
+            transition: transform 500ms ease;
+            &:hover {
+            fade: 0.7;
+            transform: scale(1.1);
+        }
     }
   }
 }
