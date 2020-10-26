@@ -30,12 +30,12 @@ const images = photos.map((i) => ({
 }))
 
 export const PhotoGallery = () => (
-  <div className="home-photogallery-section">
-    <div className="home-photogallery-text">
-      <div className="home-photogallery-text-title"><span>Nos réalisations</span></div>
-      <div className="home-photogallery-text-text"><span>Découvrez quelques unes des réalisations de Store Led</span></div>
+  <div className="realisations-photogallery-section">
+    <div className="realisations-photogallery-text">
+      <div className="realisations-photogallery-text-title"><span>Nos réalisations</span></div>
+      <div className="realisations-photogallery-text-text"><span>Découvrez quelques unes des réalisations de Store Led</span></div>
     </div>
-    <div className="home-photogallery-gallery">
+    <div className="realisations-photogallery-gallery">
       <Gallery images={images} margin={'8px'} rowHeight={'240px'} enableImageSelection={false}/>
     </div>
   </div>
