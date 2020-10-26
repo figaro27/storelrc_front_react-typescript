@@ -2,10 +2,12 @@
 import React from 'react';
 import { Container, Row, Col, Button, Carousel, Image } from 'react-bootstrap';
 import { Parallax } from 'components/parallax';
+import { useHistory } from 'react-router-dom';
 
 import './radiant.scss';
 
 export const Radiant = () => {
+  const history = useHistory();
   const title = 'Radiants'
   const text1 = "Toujours au chaud  à l'extérieur, même en hiver !"
   const text2 = "Pour compléter vos éléments extérieurs, nous vous proposons également une gamme complète de radiants, conçus pour le chauffage d'un périmètre restreint, à installer directement au mur, sous un store ou un parasol.<br/><br/>D'une grande fiabilité, nos radiants consomment peu d'énergie, et respectent l'environnement, en toute sécurité.<br/><br/>N'hésitez pas à nous contacter pour toute demande d'information, ou obtenir un devis de la part de l'un de nos conseillers.";
@@ -29,7 +31,7 @@ export const Radiant = () => {
           <Row style={{marginTop:'3em', marginBottom:'1.5em'}}>
             <Col md={6} style={{textAlign:'center'}}>
               <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: text2}}/>
-              <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
             </Col>
             <Col md={6}>
               <div className="radiant-detail_carousel-container" >

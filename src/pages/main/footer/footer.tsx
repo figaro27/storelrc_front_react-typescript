@@ -1,9 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-
+import { useHistory } from 'react-router-dom';
 import './footer.scss';
 
 export const Footer = () => {
+  const history = useHistory();
  return (
   <footer className="text-muted">
     <hr className="divider-horizontal-dotted"></hr>
@@ -35,7 +36,7 @@ export const Footer = () => {
               <a href="#" className="footer-link">Claustras</a><br/>
               <a href="#" className="footer-link">Radiants</a>
             </p>
-            <Button variant="outline-light" size="lg" block style={{margin: '2em 0 0 0'}}>Demande de devis</Button>
+            <Button variant="outline-light" size="lg" block style={{margin: '2em 0 0 0'}} onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
           </div>
         </Col>
 
