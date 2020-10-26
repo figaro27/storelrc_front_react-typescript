@@ -1,1 +1,2 @@
-export * from './store_detail';
+
+export * from './store_detail'

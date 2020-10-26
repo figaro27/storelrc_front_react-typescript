@@ -11,21 +11,21 @@ export const Store = () => {
   return (
     <>
     <Container style={{padding:'2em 12em 2em 12em'}}>
-      <h1 style={{textAlign:'center', fontSize:'3em', color:'white', marginTop:'2em'}}>
+      <h1 className="store-title">
         Stores extérieurs
       </h1>
-      <p style={{fontSize:'1.2em', textAlign:'justify', color:'white', marginTop:'2em'}}>
+      <p className="store-text">
         Notre gamme de stores extérieurs, des plus traditionnels aux plus modernes, apporteront tendance et raffinement à vos espaces. Fonctionnels, et conçus avec les meilleurs matériaux, ils mettront en valeur votre extérieur, ainsi que vos décorations. Un store extérieur est l'un des meilleurs moyens de se protéger des rayons du soleil.
       </p>
     </Container>
     <Container>
       <Row>
         { items.map( item => (
-        <Col md={4} style={{ marginBottom:'3em', paddingLeft:'0.5em', paddingRight:'0.5em'}}>
+        <Col md={4} className="store-image-container">
           <a href={item.url}>
-          <img src={item.src} className="img-thumbnail" style={{width:'100%', height:'18em', objectFit:'cover'}} />
+          <img src={item.src} className="img-thumbnail"/>
           </a>
-          <p style={{fontSize:'1.2em', color:'white', textAlign:'center', marginTop:'1em'}}>{item.title}</p>
+          <p className="store-image-text">{item.title}</p>
         </Col>
         ))}
       </Row>

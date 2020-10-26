@@ -1,10 +1,10 @@
 
-.store-parallax {
+.component-parallax {
     text-align: center;
 }
-.store-parallax-section {
+.component-parallax-section {
     width: 100%;
-    height: 420px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,7 @@
     overflow: hidden;
 }
 
-.store-parallax_img {
+.component-parallax_img {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,14 +21,14 @@
     z-index: -1;
 }
 
-.store-parallax_text_section{
+.component-parallax_text_section{
     color: white;
     overflow: hidden;
     text-align: center;
     margin-top: 2em;
 }
 
-.store-parallax_text {
+.component-parallax_text {
     position: relative;
     font-size: 2.8em;
 }

@@ -16,18 +16,19 @@ export const Parallax: React.SFC<ParallaxProps> = (props) => {
 
   return (
     <>
-    <div className="store-parallax">
-      <section className="store-parallax-section">
+    <div className="component-parallax">
+      <section className="component-parallax-section">
         <img
           src={image1}
           alt="test"
-          className="store-parallax_img img-fluid "
+          className="component-parallax_img"
           style={{
-            filter: `brightness(90%)`
+
+            filter: `brightness(70%)`
           }}
           />
-          <div className="store-parallax_text_section">
-            <h1 className="store-parallax_text">{props.title}
+          <div className="component-parallax_text_section">
+            <h1 className="component-parallax_text">{props.title}
             </h1>
           </div>
       </section>
