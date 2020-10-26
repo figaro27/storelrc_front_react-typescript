@@ -53,7 +53,7 @@ export const Header = () => {
                 <NavDropdown.Item href="/store">Stores Exterieurs</NavDropdown.Item>
                 <NavDropdown.Item href="/pergolas">Pergolas</NavDropdown.Item>
                 <NavDropdown.Item href="/enseignes">Enseignes</NavDropdown.Item>
-                <NavDropdown.Item href="/claustras">Claustras</NavDropdown.Item>
+                <NavDropdown.Item href="/claustra">Claustras</NavDropdown.Item>
                 <NavDropdown.Item href="/radiants">Radiants</NavDropdown.Item>
               </NavDropdown>
 
