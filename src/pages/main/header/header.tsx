@@ -19,7 +19,7 @@ export const Header = () => {
   }
 
   const handleScroll = () => setShowNavbar(window.scrollY < 150)
-  
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -43,14 +43,14 @@ export const Header = () => {
               <Nav.Link href="/">Accueil</Nav.Link>
               <Nav.Link href="/lambrequin-lumineux">Lambrequin lumineux</Nav.Link>
 
-              <NavDropdown 
-                title="Nos Services" 
+              <NavDropdown
+                title="Nos Services"
                 id="basic-nav-dropdown"
                 show={show}
-                onMouseEnter={showDropdown} 
+                onMouseEnter={showDropdown}
                 onMouseLeave={hideDropdown}
                 >
-                <NavDropdown.Item href="/stores">Stores Exterieurs</NavDropdown.Item>
+                <NavDropdown.Item href="/store">Stores Exterieurs</NavDropdown.Item>
                 <NavDropdown.Item href="/pergolas">Pergolas</NavDropdown.Item>
                 <NavDropdown.Item href="/enseignes">Enseignes</NavDropdown.Item>
                 <NavDropdown.Item href="/claustra">Claustras</NavDropdown.Item>

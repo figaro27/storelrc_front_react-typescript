@@ -20,61 +20,60 @@ interface DetailsProps {
 class Detail extends React.Component<DetailsProps, any> {
   render() {
     const match = this.props.match;
+
     if (match) {
       const name = match.params.name;
-      let detail = {'title': '', 'slides': ['str'], 'image':'', 'text1':'', 'text2':'', };
-      switch(name) {
-        case 'banne-traditionnel': detail = details['banne-traditionnel'];
-
-      }
-
+      let detail = {'root_url':'', 'root_text':'', 'title': '', 'slides': ['str'], 'image':'', 'text1':'', 'text2':'', };
+      detail = details[name]
       return (
         <div>
-          <Parallax title={detail.title} image={detail.image} />
-          <Container style={{marginTop:'1em'}}>
-            <a href='/store' className="store-detail-link">Stores extérieurs</a>
+        <Parallax title={detail.title} image={detail.image} />
+        <Container style={{marginTop:'1em'}} >
+          { detail.root_text != '' &&
+            <>
+            <a href={detail.root_url} className="store-detail-link">{detail.root_text}</a>
             <span className="store-detail-link"> &gt; {detail.title}</span>
-            <div style={{marginTop:'2em', textAlign:'center'}}>
-              <h2 style={{color:'white'}}>{detail.title}</h2>
-              <p style={{color:'white', fontSize:'1.4em'}}>{detail.text1}</p>
-            </div>
-            <Row style={{marginTop:'3em'}}>
-              <Col md={5} style={{textAlign:'center'}}>
-                <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
-                <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
-              </Col>
-              <Col md={7}>
+            </>
+          }
 
-                <div className="lambrequin-carousel-section" >
-                  <Carousel controls={false} >
-                    {detail.slides.map( image => (
+          <div style={{marginTop:'2em', textAlign:'center'}}>
+            <h2 style={{color:'white'}}>{detail.title}</h2>
+            <p style={{color:'white', fontSize:'1.4em'}}>{detail.text1}</p>
+          </div>
 
-                    <Carousel.Item>
-                      <img
-                        className="d-block"
-                        src={image}
-                        alt="First slide"
-                        width= "auto"
-                        height= "480px"
-                        max-width="100%"
+          <Row style={{marginTop:'3em', marginBottom:'1.5em'}}>
 
-                      />
-                    </Carousel.Item>
+            <Col md={5} style={{textAlign:'center'}}>
+              <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
+            </Col>
 
-                    ))}
+            <Col md={7} style={{paddingRight:'2em', paddingLeft:'2em'}}>
+              <div className="lambrequin-carousel-section" >
+                <Carousel controls={false} fade={true}>
+                  {detail.slides.map( image => (
 
-                  </Carousel>
-                </div>
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src={image}
+                      alt="First slide"
+                      width="100%" height="400em"
+                    />
+                  </Carousel.Item>
 
+                  ))}
 
-              </Col>
-            </Row>
-
-          </Container>
-        </div>
-      );
-    }
+                </Carousel>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
   }
-}
 
+  return <></>
+}
+}
 export const StoreDetail = Detail;
