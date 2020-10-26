@@ -11,6 +11,7 @@ import { Pergola } from '../pergola';
 import { Enseigne } from '../enseigne';
 import { Clasutras } from '../clasutras';
 import { Radiant } from '../radiant';
+import { Realisations } from '../realisations';
 import './index.scss'
 export const Main = () => {
  return (
@@ -29,6 +30,7 @@ export const Main = () => {
           <Route exact path="/enseigne/:name" component={StoreDetail}/>
           <Route exact path="/claustras" component={Clasutras}/>
           <Route exact path="/radiants" component={Radiant}/>
+          <Route exact path="/nos-realisations" component={Realisations}/>
         </Switch>
       </div>
       <Footer />
