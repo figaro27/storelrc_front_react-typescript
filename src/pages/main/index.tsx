@@ -16,6 +16,7 @@ import { References } from '../references';
 import { Contact } from '../contact';
 import { Faq } from '../faq';
 import { Sommes } from '../sommes';
+import { Demande } from '../demande';
 import './index.scss'
 export const Main = () => {
  return (
@@ -39,6 +40,7 @@ export const Main = () => {
           <Route exact path="/contact" component={Contact}/>
           <Route exact path="/faq" component={Faq}/>
           <Route exact path="/qui-sommes-nous" component={Sommes}/>
+          <Route exact path="/demande-de-devis" component={Demande}/>
         </Switch>
       </div>
       <Footer />

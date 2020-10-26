@@ -2,10 +2,12 @@
 import React from 'react';
 import { Container, Row, Col, Carousel, Button } from 'react-bootstrap';
 import { Parallax } from './parallax';
+import { useHistory } from 'react-router-dom';
 
 import './lambrequin.scss';
 
 export const Lambrequin = () => {
+  const history = useHistory();
   const images = [
     "https://static.wixstatic.com/media/e49d9d_a53c503d8d9f41e1ac721bd434751735~mv2_d_6000_4000_s_4_2.jpg",
     "https://static.wixstatic.com/media/e49d9d_d33a9f5f8b7649de8638af64aa0f7346~mv2_d_6016_4016_s_4_2.jpg",
@@ -55,7 +57,7 @@ export const Lambrequin = () => {
             <div style={{ textAlign: 'center'}}>
               <p className="luminous__carousel-description">
                 Contactez-nous pour plus d'informations sur nos services, nos tarifs, ou pour obtenir un devis ou un rendez-vous avec l'un de nos conseillers.</p>
-                <Button variant="outline-light" size="lg" className="luminous__button">Demande de devis</Button>
+                <Button variant="outline-light" size="lg" className="luminous__button" onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
             </div>
 
           </Col>
