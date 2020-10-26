@@ -1,7 +1,6 @@
 // src/components/main.tsx
 import React from 'react';
-import {Route, BrowserRouter as Router, Switch} from 'react-router-dom'
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import { enseignes } from './enseignes';
 
@@ -21,7 +20,7 @@ export const Enseigne = () => {
         { enseignes.map( item => (
         <Col md={6} style={{ marginBottom:'3em', paddingLeft:'0.5em', paddingRight:'0.5em'}}>
           <a href={item.url}>
-          <img src={item.src} className="img-thumbnail" style={{width:'100%', height:'20em', objectFit:'cover'}} />
+          <img src={item.src} className="img-thumbnail" alt="" style={{width:'100%', height:'20em', objectFit:'cover'}} />
           </a>
           <p style={{fontSize:'1.2em', color:'white', textAlign:'center', marginTop:'1em'}}>{item.title}</p>
         </Col>

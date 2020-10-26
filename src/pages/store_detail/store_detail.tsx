@@ -65,8 +65,6 @@ class Detail extends React.Component<DetailsProps, any> {
       </div>
     );
   }
-
-  return <></>
 }
 }
 export const StoreDetail = Detail;
