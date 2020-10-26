@@ -1,0 +1,29 @@
+@import 'styles/typography.scss';
+.realisations-photogallery-section {
+    padding: 8em 0em 2em 0em;
+    text-align: center;
+}
+
+.realisations-photogallery-text {
+    color:white;
+    text-align: center;
+    font-family: $fontPTSans;
+    margin-bottom: 2.5em;
+    .realisations-photogallery-text-title {
+        font-size: 48px;
+        color: white;
+    }
+    .realisations-photogallery-text-text {
+        font-size: 21px;
+        opacity: 0.9;
+    }
+}
+
+.realisations-photogallery-gallery {
+	.ReactGridGallery{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+ 	}
+}
+

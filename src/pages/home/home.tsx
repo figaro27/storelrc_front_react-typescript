@@ -28,7 +28,7 @@ export const Home = () => {
         <Button variant="outline-light" className="home-btn-en">En savoir plus</Button>
       </div>
       <BarParallax/>
-      <PhotoGallery />
+      <PhotoGallery/>
       <OurService />
     </>
  );
