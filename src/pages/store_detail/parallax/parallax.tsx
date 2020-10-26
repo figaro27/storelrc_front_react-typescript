@@ -21,9 +21,8 @@ export const Parallax: React.SFC<ParallaxProps> = (props) => {
         <img
           src={image1}
           alt="test"
-          className="store-parallax_img"
+          className="store-parallax_img img-fluid "
           style={{
-
             filter: `brightness(90%)`
           }}
           />
