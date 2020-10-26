@@ -50,11 +50,7 @@ export const Header = () => {
                 onMouseEnter={showDropdown}
                 onMouseLeave={hideDropdown}
                 >
-<<<<<<< HEAD
-                <NavDropdown.Item href="/store">Stores Exterieurs</NavDropdown.Item>
-=======
                 <NavDropdown.Item href="/stores">Stores Exterieurs</NavDropdown.Item>
->>>>>>> master
                 <NavDropdown.Item href="/pergolas">Pergolas</NavDropdown.Item>
                 <NavDropdown.Item href="/enseignes">Enseignes</NavDropdown.Item>
                 <NavDropdown.Item href="/claustra">Claustras</NavDropdown.Item>
