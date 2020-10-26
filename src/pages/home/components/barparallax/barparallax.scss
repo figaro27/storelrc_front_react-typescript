@@ -1,4 +1,3 @@
-@import 'styles/typography.scss';
 
 .home-barparallax-section {
     width: 100%;
@@ -37,7 +36,7 @@
 }
 
 .home-barparallax-text {
-    @include typography(xl-2, none);
+    font-size: 26px;
     line-height:1.5em;
     text-align:center;
     color: white;
