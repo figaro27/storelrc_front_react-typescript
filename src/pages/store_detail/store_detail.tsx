@@ -1,7 +1,6 @@
 // src/components/main.tsx
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router, Link, match } from 'react-router-dom';
+import { match } from 'react-router-dom';
 import { Parallax } from './parallax';
 import { details } from './details';
 import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
@@ -43,25 +42,19 @@ class Detail extends React.Component<DetailsProps, any> {
 
           <Row style={{marginTop:'3em', marginBottom:'1.5em'}}>
 
-            <Col md={5} style={{textAlign:'center'}}>
+            <Col md={6} style={{textAlign:'center'}}>
               <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
               <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
             </Col>
 
-            <Col md={7} style={{paddingRight:'2em', paddingLeft:'2em'}}>
-              <div className="lambrequin-carousel-section" >
-                <Carousel controls={false} fade={true}>
+            <Col md={6}>
+              <div className="store-detail_carousel-container" >
+                <Carousel controls={false} fade={true} indicators={false}>
                   {detail.slides.map( image => (
 
                   <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src={image}
-                      alt="First slide"
-                      width="100%" height="400em"
-                    />
+                    <img className="d-block w-100" alt="" src={image} />
                   </Carousel.Item>
-
                   ))}
 
                 </Carousel>
