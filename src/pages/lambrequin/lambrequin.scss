@@ -1,5 +1,39 @@
 .carousel-indicators > li{
     border-radius: 50%;
-    height: 10px;
-    width: 10px;
+    height: 6px;
+    width: 6px;
+}
+
+.luminous__banner {
+    color:'white'; 
+    margin:'1em';
+    text-align: center;
+    font-size: 37px;
+    color: white;
+    margin: 48px;
+}
+
+.luminous__description {
+   color:white;
+   font-size: 16px;
+   text-align: left;
+   opacity: 0.7;
+}
+
+.luminous__carousel-section {
+    width: 570px;
+}
+
+.luminous__carousel-description {    
+    font-style: italic;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 16px;
+}
+
+.luminous__button {
+    margin-top: 36px;
+    font-size: 24px;
+    color: white;
 }
