@@ -22,14 +22,13 @@
 .ReactGridGallery{
     flex-wrap: wrap;
     display: flex;
-    justify-content:center;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 
 .ReactGridGallery_tile-viewport {
     img {
-      width:400px;
-      height: 300px;
       transition: transform 500ms ease;
       &:hover {
         fade: 0.7;
