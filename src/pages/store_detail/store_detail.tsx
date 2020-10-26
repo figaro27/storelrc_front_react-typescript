@@ -4,10 +4,10 @@ import * as ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Link, match } from 'react-router-dom';
 import { Parallax } from './parallax';
 import { details } from './details';
-import { Container, Row, Col, Button, Carousel, Image } from 'react-bootstrap';
+import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
 
 import './store_detail.scss';
-import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
+
 interface DetailParams {
   name: string;
 }
