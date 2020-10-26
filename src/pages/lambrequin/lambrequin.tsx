@@ -39,7 +39,7 @@ export const Lambrequin = () => {
           </Col>
           <Col md={6}>
             <div className="luminous__carousel-section" >
-              <Carousel controls={false} >
+              <Carousel controls={false} fade={true} >
                 {images.map( image => (
 
                 <Carousel.Item>
