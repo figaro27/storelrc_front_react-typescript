@@ -53,7 +53,7 @@ export const details: {[index: string]:any} = {
     'corbeille':{
         root_url: '/store',
         root_text: 'Stores extérieurs',
-        image:"https://static.wixstatic.com/media/e49d9d_1610622f8ab44ad7a8e96d036d95b03c~mv2.png",
+        image:"https://static.wixstatic.com/media/e49d9d_1610622f8ab44ad7a8e96d036d95b03c~mv2.png/v1/fill/w_1000,h_405,al_c,q_90,usm_0.66_1.00_0.01/e49d9d_1610622f8ab44ad7a8e96d036d95b03c~mv2.webp",
         slides:[
             'https://static.wixstatic.com/media/e49d9d_dd755735cefb42668cb7bdad3ba58a98~mv2_d_2772_1618_s_2.jpg'
         ],
