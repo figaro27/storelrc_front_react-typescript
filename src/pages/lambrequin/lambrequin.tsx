@@ -41,10 +41,8 @@ export const Lambrequin = () => {
             <div className="luminous__carousel-section" >
               <Carousel controls={false} fade={true} >
                 {images.map( image => (
-
                 <Carousel.Item>
                   <img
-                    className="d-block w-100"
                     src={image}
                     alt="First slide"
                     width="100%" height="380em"
@@ -52,7 +50,6 @@ export const Lambrequin = () => {
                 </Carousel.Item>
 
                 ))}
-
               </Carousel>
             </div>
             <div style={{ textAlign: 'center'}}>
@@ -64,9 +61,6 @@ export const Lambrequin = () => {
           </Col>
         </Row>
       </Container>
-
-
-
     </>
  );
 };
