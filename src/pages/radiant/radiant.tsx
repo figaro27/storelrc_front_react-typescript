@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Row, Col, Button, Carousel, Image } from 'react-bootstrap';
 import { Parallax } from 'components/parallax';
 
+import './radiant.scss';
 
 export const Radiant = () => {
   const title = 'Radiants'
@@ -26,26 +27,18 @@ export const Radiant = () => {
             <p style={{color:'white', fontSize:'1.4em'}}>{text1}</p>
           </div>
           <Row style={{marginTop:'3em', marginBottom:'1.5em'}}>
-            <Col md={5} style={{textAlign:'center'}}>
+            <Col md={6} style={{textAlign:'center'}}>
               <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: text2}}/>
               <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
             </Col>
-            <Col md={7} style={{paddingRight:'2em', paddingLeft:'2em'}}>
-              <div className="lambrequin-carousel-section" >
-                <Carousel controls={false}>
+            <Col md={6}>
+              <div className="radiant-detail_carousel-container" >
+                <Carousel controls={false} fade={true} indicators={false}>
                   {slides.map( image => (
-
                   <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src={image}
-                      alt="First slide"
-                      width="100%" height="400em"
-                    />
+                    <img className="d-block w-100" src={image} alt=""/>
                   </Carousel.Item>
-
                   ))}
-
                 </Carousel>
               </div>
             </Col>
