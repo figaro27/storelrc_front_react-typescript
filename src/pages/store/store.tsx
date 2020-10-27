@@ -1,7 +1,6 @@
 // src/components/main.tsx
 import React from 'react';
-import {Route, BrowserRouter as Router, Switch} from 'react-router-dom'
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import { items } from './items';
 

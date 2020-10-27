@@ -1,6 +1,5 @@
 // src/components/main.tsx
 import React from 'react';
-import Gallery from "react-grid-gallery";
 import { Container, Row, Col } from "react-bootstrap";
 
 import './references.scss'
@@ -33,7 +32,7 @@ export const References = () => {
         {
           images.map( image => (
             <Col md={3}>
-              <img src={image} className="references-image"/>
+              <img src={image} className="references-image" alt=''/>
             </Col>
           ))
         }

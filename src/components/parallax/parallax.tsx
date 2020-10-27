@@ -1,7 +1,6 @@
 // src/components/main.tsx
 import React from 'react';
-import { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { useState } from 'react';
 
 import './parallax.scss';
 
