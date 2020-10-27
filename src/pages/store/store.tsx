@@ -23,15 +23,13 @@ export const Store = () => {
         { items.map( item => (
         <Col md={4} className="store-image-container">
           <a href={item.url}>
-          <img src={item.src} className="img-thumbnail"/>
+           <img src={item.src} className="img-thumbnail"/>
           </a>
           <p className="store-image-text">{item.title}</p>
         </Col>
         ))}
       </Row>
     </Container>
-
-
   </>
  );
 };
