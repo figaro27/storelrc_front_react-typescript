@@ -1,3 +1,32 @@
+.radiant-detail__container {
+	margin-top: 1em;
+}
+
+.radiant-detail__title {
+	margin-top: 2em;
+	text-align: center;
+	color: white;
+
+	h2 {
+		font-size: 28px;
+	}
+
+	label {
+		font-size: 20px;
+	}
+}
+
+.radiant-detail__description {
+	margin-top: 3em;
+	margin-bottom: 1.5em;
+
+	label {
+		color: white;
+		text-align: justify;
+		font-size: 16px;
+	}
+}
+
 .radiant-detail_carousel-container {
     display:flex;
     align-items: center;
