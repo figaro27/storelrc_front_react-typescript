@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Row, Col, Button, Carousel, Image } from 'react-bootstrap';
+import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
 import { Parallax } from 'components/parallax';
 import { useHistory } from 'react-router-dom';
 

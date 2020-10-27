@@ -8,7 +8,7 @@ import './contact.scss'
 
 const sleep = (ms:any) => new Promise((r) => setTimeout(r, ms));
 
-const SignupSchema = Yup.object().shape({
+const ContactSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
   telephone: Yup.string().required('Required'),
@@ -19,8 +19,6 @@ const SignupSchema = Yup.object().shape({
 
 
 export const Contact = () => {
-
-  const [name, setName] = useState('');
 
   return (
       <Container className="contact-container">
@@ -44,7 +42,7 @@ export const Contact = () => {
                 secteur: '',
                 message: ''
               }}
-              validationSchema={SignupSchema}
+              validationSchema={ContactSchema}
               onSubmit={values => {
                 // same shape as initial values
                 console.log(values);

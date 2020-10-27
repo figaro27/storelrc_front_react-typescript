@@ -29,7 +29,7 @@ class Detail extends React.Component<DetailsProps, any> {
         <div>
         <Parallax title={detail.title} image={detail.image} />
         <Container style={{marginTop:'1em'}} >
-          { detail.root_text != '' &&
+          { detail.root_text !== '' &&
             <>
             <a href={detail.root_url} className="store-detail-link">{detail.root_text}</a>
             <span className="store-detail-link"> &gt; {detail.title}</span>
