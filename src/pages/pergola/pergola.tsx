@@ -5,6 +5,8 @@ import { Button, Container, Row, Col } from 'react-bootstrap';
 
 import { pergolas } from './pergolas';
 
+import './pergola.scss';
+
 export const Pergola = () => {
   return (
     <>
@@ -12,7 +14,7 @@ export const Pergola = () => {
       <h1 style={{textAlign:'center', fontSize:'3em', color:'white', marginTop:'2em'}}>
         Pergolas
       </h1>
-      <p style={{fontSize:'1.2em', textAlign:'justify', color:'white', marginTop:'2em'}}>
+      <p className="pergola__description">
         Notre gamme de pergolas sont conçues pour vous protéger du vent, de la pluie et du soleil. Elles vous permettront de créer un espace de vie alliant raffinement et qualité tout en s'adaptant avec votre décoration extérieur, qu'elle soit moderne ou traditionnelle.
       </p>
     </Container>
