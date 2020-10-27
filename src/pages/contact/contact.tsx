@@ -1,14 +1,11 @@
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import { Container, Col, Row } from "react-bootstrap";
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
 import './contact.scss'
 
-const sleep = (ms:any) => new Promise((r) => setTimeout(r, ms));
-
-const ContactSchema = Yup.object().shape({
+const SignupSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
   telephone: Yup.string().required('Required'),
@@ -19,6 +16,9 @@ const ContactSchema = Yup.object().shape({
 
 
 export const Contact = () => {
+  const onSubmit = () => {
+    console.log("Submit");
+  }
 
   return (
       <Container className="contact-container">
@@ -42,11 +42,8 @@ export const Contact = () => {
                 secteur: '',
                 message: ''
               }}
-              validationSchema={ContactSchema}
-              onSubmit={values => {
-                // same shape as initial values
-                console.log(values);
-              }}
+              validationSchema={ SignupSchema }
+              onSubmit={ onSubmit }
             >
               {({ errors, touched }) => (
                 <Form>
@@ -70,6 +67,5 @@ export const Contact = () => {
         </Row>
 
       </Container>
-
  );
 };
