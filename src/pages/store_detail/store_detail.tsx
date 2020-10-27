@@ -57,7 +57,6 @@ class Detail extends React.Component<DetailsProps, any> {
                     <img className="d-block w-100" alt="" src={image} />
                   </Carousel.Item>
                   ))}
-
                 </Carousel>
               </div>
             </Col>

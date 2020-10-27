@@ -8,7 +8,7 @@
 }
 
 .nav-link {
-  @include typography(lg, none);
+  font-size: 17px;
   color: white;
 }
 .dropdown-menu {
@@ -34,6 +34,7 @@
 
 .header__button {
   margin-left: 32px;
+  font-size: 15px;
 }
 
 .nav-link, .nav-item{

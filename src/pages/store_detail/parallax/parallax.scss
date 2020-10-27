@@ -30,7 +30,9 @@
 
 .store-parallax_text {
     position: relative;
-    font-size: 2.8em;
+    font-size: 42px;
+    font-weight: 700;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
 }
 
 @keyframes ani_text_fade_in {
