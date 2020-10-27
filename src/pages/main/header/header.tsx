@@ -1,7 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import {Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import { Container, Button, Row } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
+
+import { header } from './header-data';
+
 import clsx from 'clsx'
 
 import './header.scss'
@@ -40,27 +43,26 @@ export const Header = () => {
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link className="nav-link" href="/">Accueil</Nav.Link>
-              <Nav.Link className="nav-link" href="/lambrequin-lumineux">Lambrequin lumineux</Nav.Link>
-
-              <NavDropdown
-                className="nav-link"
-                title="Nos Services"
-                id="basic-nav-dropdown"
-                show={show}
-                onMouseEnter={showDropdown}
-                onMouseLeave={hideDropdown}
-                >
-                <NavDropdown.Item href="/store">Stores Exterieurs</NavDropdown.Item>
-                <NavDropdown.Item href="/pergola">Pergolas</NavDropdown.Item>
-                <NavDropdown.Item href="/enseigne">Enseignes</NavDropdown.Item>
-                <NavDropdown.Item href="/claustras">Claustras</NavDropdown.Item>
-                <NavDropdown.Item href="/radiants">Radiants</NavDropdown.Item>
-              </NavDropdown>
-
-              <Nav.Link className="nav-link" href="/nos-realisations">Realisations</Nav.Link>
-              <Nav.Link className="nav-link" href="/nos-references">References</Nav.Link>
-              <Nav.Link className="nav-link" href="/contact">Contact</Nav.Link>
+              {
+                header.map((item: any) => (
+                  (item.children.length > 0) ? 
+                    <NavDropdown
+                      className="nav-link"
+                      title={item.name}
+                      id="basic-nav-dropdown"
+                      show={show}
+                      onMouseEnter={showDropdown}
+                      onMouseLeave={hideDropdown}
+                    >
+                      {
+                        item.children.map((submenu: any) => (
+                          <NavDropdown.Item href={ submenu.path }>{ submenu.name }</NavDropdown.Item>
+                        ))
+                      }
+                    </NavDropdown> :
+                    <Nav.Link className="nav-link" href={item.path}>{item.name}</Nav.Link>
+                  ))
+              }
             </Nav>
             <Nav className="header__button">
               <Button variant="outline-light" block>Demande de devis</Button>

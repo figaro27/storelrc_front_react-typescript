@@ -2,12 +2,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import { enseignes } from './enseignes';
+import { enseignes } from './enseign-mock';
 
 export const Enseigne = () => {
   return (
     <>
-    <Container style={{padding:'2em 12em 2em 12em'}}>
+    <Container className="enseign__container">
       <h1 style={{textAlign:'center', fontSize:'3em', color:'white', marginTop:'2em'}}>
         Enseignes
       </h1>

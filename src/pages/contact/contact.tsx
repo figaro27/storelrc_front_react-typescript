@@ -1,13 +1,9 @@
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import { Container, Col, Row } from "react-bootstrap";
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
 import './contact.scss'
-import { createNoSubstitutionTemplateLiteral } from 'typescript';
-
-const sleep = (ms:any) => new Promise((r) => setTimeout(r, ms));
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
@@ -20,13 +16,10 @@ const SignupSchema = Yup.object().shape({
 
 
 export const Contact = () => {
-
-  const [name, setName] = useState('');
-
   const onSubmit = () => {
     console.log("Submit");
   }
-  
+
   return (
       <Container className="contact-container">
         <h1 className="contact-text-title">
