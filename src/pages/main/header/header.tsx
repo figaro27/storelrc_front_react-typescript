@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import {Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Button, Row } from 'react-bootstrap';
-
+import { useHistory } from 'react-router-dom';
 import { header } from './header-data';
 
 import clsx from 'clsx'
@@ -28,8 +28,10 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const history = useHistory();
+
   return (
-    
+
     <Navbar collapseOnSelect expand="lg" variant="dark" className={clsx("header-nav fixed-top justify-content-center", { 'hide-navbar': !showNavbar })}>
         <Row className="justify-content-md-center">
           <Navbar.Brand href="/">
@@ -45,7 +47,7 @@ export const Header = () => {
             <Nav className="mr-auto">
               {
                 header.map((item: any) => (
-                  (item.children.length > 0) ? 
+                  (item.children.length > 0) ?
                     <NavDropdown
                       className="nav-link"
                       title={item.name}
@@ -65,7 +67,7 @@ export const Header = () => {
               }
             </Nav>
             <Nav className="header__button">
-              <Button variant="outline-light" block>Demande de devis</Button>
+              <Button variant="outline-light" block onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
             </Nav>
           </Navbar.Collapse>
         </Row>

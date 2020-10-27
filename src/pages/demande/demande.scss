@@ -1,0 +1,51 @@
+.demande-container{
+    margin-top: 6em;
+    margin-bottom: 2em;
+    max-width: 800px;
+}
+
+.demande-title {
+    text-align: center;
+    font-size: 3em;
+    color: white;
+}
+
+.demande-card-title {
+    font-size: 2.5em;
+    margin-top: 1em;
+}
+
+.demande-input {
+    width:100%;
+
+}
+.demande-invalid-container {
+    width: 100%;
+    height: 2em;
+
+}
+.demande-invalid-text{
+    position: absolute;
+    color: red;
+    font-size: 1em;
+}
+
+.demande-submit, .demande-submit:hover {
+    background-color:black;
+    color: white;
+}
+.demande-submit:hover {
+    background-color: rgba(4, 56, 74, 0.8);
+}
+
+.demande-file-container {
+    margin: 0.8em 0;
+}
+
+.demande-file-btn, .demande-file-btn:hover{
+    border-color: transparent;
+    background-color: black;
+    color: white;
+    padding: 0.2em 0.5em;
+    margin-right: 1em;
+}

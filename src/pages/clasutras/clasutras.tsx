@@ -2,9 +2,11 @@
 import React from 'react';
 import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
 import { Parallax } from 'components/parallax';
+import { useHistory } from 'react-router-dom';
 
 import './clasutras.scss'
 export const Clasutras = () => {
+  const history = useHistory();
   const title = 'Claustras'
   const text1 = 'Concevez votre terrasse idéale'
   const text2 = "Idéal pour la création d'une terrasse fermée personnalisée, nous vous proposons une gamme complète de claustras, conçus avec des matériaux de qualité, ainsi qu'un large choix de formes et coloris<br/><br/>Réalisés à partir de modules fixes ou amovibles, les claustras peut être modifiés à souhait. Entièrement modulables, ils peuvent être adaptés à toutes les contraintes d'espaces ou de confidentialité.<br/><br/>Elément incontournable pour délimiter la terrasse fermée d'un restaurant, le claustra est de plus en plus présent dans le paysage urbain.<br/><br/>N'hésitez pas à nous contacter pour toute demande d'information, ou obtenir un devis de la part de l'un de nos conseillers.";
@@ -26,7 +28,7 @@ export const Clasutras = () => {
           <Row className="claustras__description-section">
             <Col md={6} className="text-center">
               <label dangerouslySetInnerHTML={{__html: text2}}/>
-              <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
             </Col>
             <Col md={6}>
               <div className="clasturas__carousel-container" >
