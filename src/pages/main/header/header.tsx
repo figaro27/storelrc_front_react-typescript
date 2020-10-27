@@ -26,8 +26,8 @@ export const Header = () => {
   }, [])
 
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" className={clsx("header-nav fixed-top ", { 'hide-navbar': !showNavbar })}>
-      <Container>
+    
+    <Navbar collapseOnSelect expand="lg" variant="dark" className={clsx("header-nav fixed-top justify-content-center", { 'hide-navbar': !showNavbar })}>
         <Row className="justify-content-md-center">
           <Navbar.Brand href="/">
             <img  className="header-img"
@@ -40,10 +40,11 @@ export const Header = () => {
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="/">Accueil</Nav.Link>
-              <Nav.Link href="/lambrequin-lumineux">Lambrequin lumineux</Nav.Link>
+              <Nav.Link className="nav-link" href="/">Accueil</Nav.Link>
+              <Nav.Link className="nav-link" href="/lambrequin-lumineux">Lambrequin lumineux</Nav.Link>
 
               <NavDropdown
+                className="nav-link"
                 title="Nos Services"
                 id="basic-nav-dropdown"
                 show={show}
@@ -57,16 +58,15 @@ export const Header = () => {
                 <NavDropdown.Item href="/radiants">Radiants</NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link href="/nos-realisations">Realisations</Nav.Link>
-              <Nav.Link href="/nos-references">References</Nav.Link>
-              <Nav.Link href="/contact">Contact</Nav.Link>
+              <Nav.Link className="nav-link" href="/nos-realisations">Realisations</Nav.Link>
+              <Nav.Link className="nav-link" href="/nos-references">References</Nav.Link>
+              <Nav.Link className="nav-link" href="/contact">Contact</Nav.Link>
             </Nav>
             <Nav className="header__button">
-              <Button variant="outline-light" size="lg" block>Demsande de devis</Button>
+              <Button variant="outline-light" block>Demande de devis</Button>
             </Nav>
           </Navbar.Collapse>
         </Row>
-      </Container>
     </Navbar>
 
   );
