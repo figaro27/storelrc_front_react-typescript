@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './footer.scss';
+import { contactInfo, storeLinks, otherLinks } from './foot-mock';
 
 export const Footer = () => {
   const history = useHistory();
@@ -17,11 +18,13 @@ export const Footer = () => {
               data-type="image"
               src="https://static.wixstatic.com/media/e49d9d_2f69a5b64a9f454b8503fc6a75c44a8b~mv2.png"/>
             <p className="footer-contact-text">
-              74 Chemin de L'Olivet<br/>
-              06110 Le Cannet<br/>
-              Tél : 04 93 90 81 41<br/>
-              Mob : 06 69 14 17 13<br/>
-              contact@storeled.fr
+              {
+                contactInfo.map(item => (
+                  <>
+                    {item} <br/>
+                  </>
+                ))
+              }
             </p>
           </div>
         </Col>
@@ -29,12 +32,13 @@ export const Footer = () => {
         <Col md={4}>
           <div className="footer-link-section">
             <p>
-              <a href="/lambrequin-lumineux" className="footer-link">Lambrequin lumineux</a><br/>
-              <a href="/store" className="footer-link">Stores extérieurs</a><br/>
-              <a href="/pergola" className="footer-link">Pergolas</a><br/>
-              <a href="/enseigne" className="footer-link">Enseignes</a><br/>
-              <a href="/claustras" className="footer-link">Claustras</a><br/>
-              <a href="/radiants" className="footer-link">Radiants</a>
+              {
+                storeLinks.map(item =>(
+                  <>
+                  <a href={item.path} className="footer-link">{item.name}</a><br/>
+                  </>
+                ))
+              }
             </p>
             <Button variant="outline-light" size="lg" block style={{margin: '2em 0 0 0'}} onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
           </div>
@@ -61,10 +65,13 @@ export const Footer = () => {
             </div>
 
             <p>
-              <a href="/nos-references" className="footer-link">Nos références</a><br/>
-              <a href="/qui-sommes-nous" className="footer-link">Qui sommes-nous</a><br/>
-              <a href="/faq" className="footer-link">F.A.Q.</a><br/>
-              <a href="/contact" className="footer-link">Contact</a>
+              {
+                otherLinks.map(item => (
+                  <>
+                    <a href={item.path} className="footer-link">{item.name}</a><br/>
+                  </>
+                ))
+              }
             </p>
           </div>
         </Col>
