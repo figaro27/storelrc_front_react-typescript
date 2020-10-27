@@ -5,6 +5,7 @@ import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
 import './contact.scss'
+import { createNoSubstitutionTemplateLiteral } from 'typescript';
 
 const sleep = (ms:any) => new Promise((r) => setTimeout(r, ms));
 
@@ -22,6 +23,10 @@ export const Contact = () => {
 
   const [name, setName] = useState('');
 
+  const onSubmit = () => {
+    console.log("Submit");
+  }
+  
   return (
       <Container className="contact-container">
         <h1 className="contact-text-title">
@@ -44,11 +49,8 @@ export const Contact = () => {
                 secteur: '',
                 message: ''
               }}
-              validationSchema={SignupSchema}
-              onSubmit={values => {
-                // same shape as initial values
-                console.log(values);
-              }}
+              validationSchema={ SignupSchema }
+              onSubmit={ onSubmit }
             >
               {({ errors, touched }) => (
                 <Form>
@@ -72,6 +74,5 @@ export const Contact = () => {
         </Row>
 
       </Container>
-
  );
 };
