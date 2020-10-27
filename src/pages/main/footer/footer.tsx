@@ -1,9 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-
+import { useHistory } from 'react-router-dom';
 import './footer.scss';
 
 export const Footer = () => {
+  const history = useHistory();
  return (
   <footer className="text-muted">
     <hr className="divider-horizontal-dotted"></hr>
@@ -28,14 +29,14 @@ export const Footer = () => {
         <Col md={4}>
           <div className="footer-link-section">
             <p>
-              <a href="#" className="footer-link">Lambrequin lumineux</a><br/>
-              <a href="#" className="footer-link">Stores extérieurs</a><br/>
-              <a href="#" className="footer-link">Pergolas</a><br/>
-              <a href="#" className="footer-link">Enseignes</a><br/>
-              <a href="#" className="footer-link">Claustras</a><br/>
-              <a href="#" className="footer-link">Radiants</a>
+              <a href="/lambrequin-lumineux" className="footer-link">Lambrequin lumineux</a><br/>
+              <a href="/store" className="footer-link">Stores extérieurs</a><br/>
+              <a href="/pergola" className="footer-link">Pergolas</a><br/>
+              <a href="/enseigne" className="footer-link">Enseignes</a><br/>
+              <a href="/claustras" className="footer-link">Claustras</a><br/>
+              <a href="/radiants" className="footer-link">Radiants</a>
             </p>
-            <Button variant="outline-light" size="lg" block style={{margin: '2em 0 0 0'}}>Demande de devis</Button>
+            <Button variant="outline-light" size="lg" block style={{margin: '2em 0 0 0'}} onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
           </div>
         </Col>
 
@@ -60,11 +61,11 @@ export const Footer = () => {
             </div>
 
             <p>
-              <a href="#" className="footer-link">A propos</a><br/>
               <a href="#" className="footer-link">Revendeurs</a><br/>
-              <a href="/qui-sommes-nous" className="footer-link">Nos références</a><br/>
+              <a href="/nos-references" className="footer-link">Nos références</a><br/>
+              <a href="/qui-sommes-nous" className="footer-link">Qui sommes-nous</a><br/>
               <a href="/faq" className="footer-link">F.A.Q.</a><br/>
-              <a href="#" className="footer-link">Contact</a>
+              <a href="/contact" className="footer-link">Contact</a>
             </p>
           </div>
         </Col>

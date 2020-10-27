@@ -15,7 +15,7 @@ export const References = () => {
         {
           brandsData.map( image => (
             <Col md={3}>
-              <img src={image} className="references-image"/>
+              <img src={image} className="references-image" alt=''/>
             </Col>
           ))
         }

@@ -1,6 +1,6 @@
 // src/components/main.tsx
 import React from 'react';
-import { Button, Navbar } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { BarParallax, Parallax, PhotoGallery, OurService } from './components'
 import './home.scss'
 

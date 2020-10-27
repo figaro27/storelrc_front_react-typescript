@@ -1,5 +1,5 @@
 // src/components/main.tsx
-import React, { useState, useCallback, CSSProperties } from "react";
+import React, { CSSProperties } from "react";
 import Gallery from "react-grid-gallery";
 import { photos } from "./photos";
 

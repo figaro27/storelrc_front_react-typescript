@@ -4,7 +4,7 @@ import { match } from 'react-router-dom';
 import { Parallax } from './parallax';
 import { details } from './details';
 import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
-
+import { useHistory } from 'react-router-dom';
 import './store_detail.scss';
 
 interface DetailParams {
@@ -19,6 +19,7 @@ interface DetailsProps {
 class Detail extends React.Component<DetailsProps, any> {
   render() {
     const match = this.props.match;
+    const history = useHistory();
 
     if (match) {
       const name = match.params.name;
@@ -44,7 +45,7 @@ class Detail extends React.Component<DetailsProps, any> {
 
             <Col md={6} style={{textAlign:'center'}}>
               <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
-              <Button variant="outline-light" size="lg" className='store-detail-demande-btn'>Demande de devis</Button>
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
             </Col>
 
             <Col md={6}>
