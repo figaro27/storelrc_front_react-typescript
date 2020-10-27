@@ -61,7 +61,6 @@ export const Footer = () => {
             </div>
 
             <p>
-              <a href="#" className="footer-link">Revendeurs</a><br/>
               <a href="/nos-references" className="footer-link">Nos références</a><br/>
               <a href="/qui-sommes-nous" className="footer-link">Qui sommes-nous</a><br/>
               <a href="/faq" className="footer-link">F.A.Q.</a><br/>

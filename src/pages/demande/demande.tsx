@@ -40,11 +40,11 @@ const DemandeSchema = Yup.object().shape({
 export const Demande = () => {
 
   const [noSouhaitee, setNoSouhaitee] = useState(0)
-
   const [logoName, setLogoName] = useState('');
   const [photo1Name, setphoto1Name] = useState('');
   const [photo2Name, setphoto2Name] = useState('');
   const [photo3Name, setphoto3Name] = useState('');
+
   const setStates = (index:any, val:any) => {
     switch(index){
       case 0: setLogoName(val); break;
