@@ -40,6 +40,34 @@ const DemandeSchema = Yup.object().shape({
 export const Demande = () => {
 
   const [noSouhaitee, setNoSouhaitee] = useState(0)
+
+  const [logoName, setLogoName] = useState('');
+  const [photo1Name, setphoto1Name] = useState('');
+  const [photo2Name, setphoto2Name] = useState('');
+  const [photo3Name, setphoto3Name] = useState('');
+  const setStates = (index:any, val:any) => {
+    switch(index){
+      case 0: setLogoName(val); break;
+      case 1: setphoto1Name(val); break;
+      case 2: setphoto2Name(val); break;
+      case 3: setphoto3Name(val); break;
+    }
+  }
+
+  const logoFileInput:any = React.useRef(null);
+  const photo1FileInput:any = React.useRef(null);
+  const photo2FileInput:any = React.useRef(null);
+  const photo3FileInput:any = React.useRef(null);
+
+  const file_ref_arr = [logoFileInput, photo1FileInput, photo2FileInput, photo3FileInput]
+  const file_name_state_arr = [logoName, photo1Name, photo2Name, photo3Name]
+  const file_arr = ['file_logo', 'file_photo1', 'file_photo2', 'file_photo3']
+  const file_label_arr = ['Téléchargez votre logo (vectorisé)', 'Photo n°1', 'Photo n°2', 'Photo n°3']
+
+  const imageBtnClick = (e:any, index:any) => {
+    file_ref_arr[index].current.click();
+  }
+
   const changeNoSouhaitee = (e:any, values:any) => {
     let no = e.currentTarget.value
     values.souhaitee_arr = []
@@ -84,30 +112,6 @@ export const Demande = () => {
     }
     return Object.values(html);
   }
-
-  const [logoName, setLogoName] = useState('');
-  const logoFileInput:any = React.useRef(null);
-  const logoBtnClick = (event:any) => {
-    logoFileInput.current.click();
-  };
-
-  const [photo1Name, setphoto1Name] = useState('');
-  const photo1FileInput:any = React.useRef(null);
-  const photo1BtnClick = (event:any) => {
-    photo1FileInput.current.click();
-  };
-
-  const [photo2Name, setphoto2Name] = useState('');
-  const photo2FileInput:any = React.useRef(null);
-  const photo2BtnClick = (event:any) => {
-    photo2FileInput.current.click();
-  };
-
-  const [photo3Name, setphoto3Name] = useState('');
-  const photo3FileInput:any = React.useRef(null);
-  const photo3BtnClick = (event:any) => {
-    photo3FileInput.current.click();
-  };
 
   return (
     <Container className="demande-container">
@@ -225,37 +229,20 @@ export const Demande = () => {
 
               <Field type="text" name="site" className="demande-input" placeholder="Site web" />
 
-              <div className="demande-file-container">
-              <Button onClick={logoBtnClick} className="demande-file-btn">
-                { logoName !== '' ? <FaRegCheckCircle />: <FaUpload />}
-                 Téléchargez votre logo (vectorisé)</Button>
-              <label>{logoName}</label>
-              <input type="file" style={{display:'none'}} ref={logoFileInput} onChange={(e:any)=>{setFieldValue("file_logo", e.currentTarget.files[0]); setLogoName(e.currentTarget.files[0].name)}}/>
-              </div>
-
-              <div className="demande-file-container">
-              <Button onClick={photo1BtnClick} className="demande-file-btn">
-                { photo1Name !== '' ? <FaRegCheckCircle />: <FaUpload />}
-                Photo n°1</Button>
-              <label>{photo1Name}</label>
-              <input type="file" style={{display:'none'}} ref={photo1FileInput} onChange={(e:any)=>{setFieldValue("file_photo1", e.currentTarget.files[0]); setphoto1Name(e.currentTarget.files[0].name)}}/>
-              </div>
-
-              <div className="demande-file-container">
-              <Button onClick={photo2BtnClick} className="demande-file-btn">
-                { photo2Name !== '' ? <FaRegCheckCircle />: <FaUpload />}
-                Photo n°2</Button>
-              <label>{photo2Name}</label>
-              <input type="file" style={{display:'none'}} ref={photo2FileInput} onChange={(e:any)=>{setFieldValue("file_photo2", e.currentTarget.files[0]); setphoto2Name(e.currentTarget.files[0].name)}}/>
-              </div>
-
-              <div className="demande-file-container">
-              <Button onClick={photo3BtnClick} className="demande-file-btn">
-                { photo3Name !== '' ? <FaRegCheckCircle />: <FaUpload />}
-                Photo n°3</Button>
-              <label>{photo3Name}</label>
-              <input type="file" style={{display:'none'}} ref={photo3FileInput} onChange={(e:any)=>{setFieldValue("file_photo3", e.currentTarget.files[0]); setphoto3Name(e.currentTarget.files[0].name)}}/>
-              </div>
+              {
+                file_arr.map( (item, index) => (
+                  <>
+                  <div className="demande-file-container">
+                    <Button onClick={(e)=>{imageBtnClick(e, index)}} className="demande-file-btn">
+                      { file_name_state_arr[index] !== '' ? <FaRegCheckCircle />: <FaUpload />}
+                      {file_label_arr[index]}</Button>
+                      <label>{file_name_state_arr[index]}</label>
+                      <input type="file" style={{display:'none'}} ref={file_ref_arr[index]}
+                        onChange={(e:any)=>{setFieldValue(file_arr[index], e.currentTarget.files[0]); setStates(index, e.currentTarget.files[0].name)}}/>
+                  </div>
+                  </>
+                ))
+              }
 
               <div className="demande-invalid-container"></div>
               <Button type="submit" variant='block' className="demande-submit" disabled={isSubmitting}>Envoyer</Button>
