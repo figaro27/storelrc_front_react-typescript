@@ -1,6 +1,6 @@
 // src/components/main.tsx
 import React from 'react';
-import { match, Redirect, useHistory, Route } from 'react-router-dom';
+import { match, Redirect, } from 'react-router-dom';
 import { Parallax } from './parallax';
 import { details } from './details';
 import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
@@ -63,9 +63,9 @@ class Detail extends React.Component<DetailsProps, any> {
             <Col md={6}>
               <div className="store-detail_carousel-container" >
                 <Carousel controls={false} fade={true} indicators={false}>
-                  {detail.slides.map( image => (
+                  {detail.slides.map( (image, ind) => (
 
-                  <Carousel.Item>
+                  <Carousel.Item key={`store_detail_carousel_item_${ind}`}>
                     <img className="d-block w-100" alt="" src={image} />
                   </Carousel.Item>
                   ))}

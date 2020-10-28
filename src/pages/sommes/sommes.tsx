@@ -12,7 +12,7 @@ export const Sommes = () => {
         Store Led est une société dynamique spécialisée dans la fabrication de lambrequins lumineux.
       </p>
       {
-        sommesData.map(item => (<p className="sommes-text-text">{ item }</p>))
+        sommesData.map((item, ind) => (<p className="sommes-text-text" key={`sommes_item_${ind}`}>{ item }</p>))
       }
       <Button variant="outline-light" size="lg" className="sommes-btn" >Contactez-nous !</Button>
     </Container>

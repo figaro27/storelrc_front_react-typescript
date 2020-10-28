@@ -19,10 +19,10 @@ export const Store = () => {
     </Container>
     <Container>
       <Row>
-        { items.map( item => (
-        <Col md={4} className="store-image-container">
+        { items.map( (item, index) => (
+        <Col md={4} className="store-image-container" key={`store_col_${index}`}>
           <a href={item.url}>
-           <img src={item.src} className="img-thumbnail"/>
+           <img src={item.src} className="img-thumbnail" alt=''/>
           </a>
           <p className="store-image-text">{item.title}</p>
         </Col>
