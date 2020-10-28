@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import { enseignes } from './enseign-mock';
+import './enseign.scss'
 
 export const Enseigne = () => {
   return (
