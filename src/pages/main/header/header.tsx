@@ -46,7 +46,7 @@ export const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               {
-                header.map((item: any) => (
+                header.map((item:any, index:any) => (
                   (item.children.length > 0) ?
                     <NavDropdown
                       className="nav-link"
@@ -55,14 +55,15 @@ export const Header = () => {
                       show={show}
                       onMouseEnter={showDropdown}
                       onMouseLeave={hideDropdown}
+                      key={`header_nav_${index}`}
                     >
                       {
-                        item.children.map((submenu: any) => (
-                          <NavDropdown.Item href={ submenu.path }>{ submenu.name }</NavDropdown.Item>
+                        item.children.map((submenu: any, drop_ind: any) => (
+                          <NavDropdown.Item href={ submenu.path } key={drop_ind}>{ submenu.name }</NavDropdown.Item>
                         ))
                       }
                     </NavDropdown> :
-                    <Nav.Link className="nav-link" href={item.path}>{item.name}</Nav.Link>
+                    <Nav.Link className="nav-link" href={item.path} key={index}>{item.name}</Nav.Link>
                   ))
               }
             </Nav>
