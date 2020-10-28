@@ -26,8 +26,8 @@ export const Radiant = () => {
             <Col md={6}>
               <div className="radiant-detail_carousel-container" >
                 <Carousel controls={false} fade={true} indicators={false}>
-                  {radiantData.slides.map( image => (
-                  <Carousel.Item>
+                  {radiantData.slides.map( (image, ind) => (
+                  <Carousel.Item key={`radiant_img_${ind}`}>
                     <img className="d-block w-100" src={image} alt=""/>
                   </Carousel.Item>
                   ))}

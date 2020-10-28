@@ -50,13 +50,13 @@ export const Footer = () => {
               Retrouvez-nous sur :
             </p>
             <div className="footer-outsite-img-section">
-              <a href='#' style={{margin: '1em'}}>
+              <a href='https://www.facebook.com/storeled' style={{margin: '1em'}}>
                 <img className="footer-outsite-img"
                 alt="Facebook Social Icône" data-type="image"
                 style={{width: '39px', height: '39px'}}
                 src="https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png"/>
               </a>
-              <a href='#' style={{margin: '1em'}}>
+              <a href='https://www.instagram.com/accounts/login/?next=/store.led/' style={{margin: '1em'}}>
                 <img className="footer-outsite-img"
                 alt="Facebook Social Icône" data-type="image"
                 style={{width: '39px', height: '39px'}}

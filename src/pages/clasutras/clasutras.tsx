@@ -24,8 +24,8 @@ export const Clasutras = () => {
             <Col md={6}>
               <div className="clasturas__carousel-container" >
                 <Carousel controls={false} fade={true} indicators={false}>
-                  {clasutrasData.slides.map( image => (
-                  <Carousel.Item>
+                  {clasutrasData.slides.map( (image, ind) => (
+                  <Carousel.Item key={`clasutras_img_${ind}`}>
                     <img className="d-block w-100" src={image} alt=""/>
                   </Carousel.Item>
                   ))}

@@ -16,10 +16,10 @@ export const Faq = () => {
 
         {
           faqData.map((item, index) => (
-            <>
+            <div key={`faq_item_${index}`}>
               <p className="faq-text-title">{ item.question }</p>
               <p className="faq-text-text">{ item.answer }</p>
-            </>
+            </div>
           ))
         }
       </Container>
