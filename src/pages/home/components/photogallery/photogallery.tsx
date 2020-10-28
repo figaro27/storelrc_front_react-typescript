@@ -12,7 +12,7 @@ return (
       <div className="home-photogallery-text-text"><span>Un savoir-faire acquis grâce à de nombreuses années d'expérience</span></div>
     </div>
     <div className="home-photogallery__gallery">
-      <Gallery images={photos} enableImageSelection={false}  margin={'5px'} rowHeight={247}/>
+      <Gallery images={photos} enableImageSelection={false}  margin={6} rowHeight={247}/>
     </div>
   </div>
  );

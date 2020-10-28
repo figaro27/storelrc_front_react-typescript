@@ -17,29 +17,29 @@ export const Footer = () => {
               alt="StoreledNOIR-2-pagepng_edited.png"
               data-type="image"
               src="https://static.wixstatic.com/media/e49d9d_2f69a5b64a9f454b8503fc6a75c44a8b~mv2.png"/>
-            <p className="footer-contact-text">
+            <div className="footer-contact-text">
               {
-                contactInfo.map(item => (
-                  <>
+                contactInfo.map((item, ind) => (
+                  <div key={`footer_contact_${ind}`}>
                     {item} <br/>
-                  </>
+                  </div>
                 ))
               }
-            </p>
+            </div>
           </div>
         </Col>
 
         <Col md={4}>
-          <div className="footer-link-section">
-            <p>
+          <div className="footer-link-section" >
+            <div>
               {
-                storeLinks.map(item =>(
-                  <>
-                  <a href={item.path} className="footer-link">{item.name}</a><br/>
-                  </>
+                storeLinks.map((item, ind) =>(
+                  <div key={`footer_link_${ind}`}>
+                     <a href={item.path} className="footer-link" >{item.name}</a>
+                  </div>
                 ))
               }
-            </p>
+            </div>
             <Button variant="outline-light" size="lg" block style={{margin: '2em 0 0 0'}} onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
           </div>
         </Col>
@@ -64,15 +64,15 @@ export const Footer = () => {
               </a>
             </div>
 
-            <p>
+            <div>
               {
-                otherLinks.map(item => (
-                  <>
-                    <a href={item.path} className="footer-link">{item.name}</a><br/>
-                  </>
+                otherLinks.map((item, ind) => (
+                  <div key={`footer_outside_${ind}`}>
+                  <a href={item.path} className="footer-link" >{item.name}</a><br/>
+                  </div>
                 ))
               }
-            </p>
+            </div>
           </div>
         </Col>
       </Row>
