@@ -1,10 +1,9 @@
 // src/components/main.tsx
-import * as React from 'react';
-import { match } from 'react-router-dom';
+import React from 'react';
+import { match, Redirect, useHistory, Route } from 'react-router-dom';
 import { Parallax } from './parallax';
 import { details } from './details';
 import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 import './store_detail.scss';
 
 interface DetailParams {
@@ -17,9 +16,21 @@ interface DetailsProps {
 }
 
 class Detail extends React.Component<DetailsProps, any> {
+
+  set_url(url:any) {
+    this.setState({ redirect: url });
+  }
+
+  state = { redirect: null };
+
   render() {
     const match = this.props.match;
-    const history = useHistory();
+
+    if (this.state.redirect) {
+      return (
+        <Redirect to="/demande-de-devis" push/>
+      )
+    }
 
     if (match) {
       const name = match.params.name;
@@ -45,7 +56,8 @@ class Detail extends React.Component<DetailsProps, any> {
 
             <Col md={6} style={{textAlign:'center'}}>
               <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
-              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
+
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>{this.set_url('/demande-de-devi')}}>Demande de devis</Button>
             </Col>
 
             <Col md={6}>
@@ -64,7 +76,7 @@ class Detail extends React.Component<DetailsProps, any> {
         </Container>
       </div>
     );
+    }
   }
-}
 }
 export const StoreDetail = Detail;
