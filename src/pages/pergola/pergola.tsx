@@ -9,8 +9,8 @@ import './pergola.scss';
 export const Pergola = () => {
   return (
     <>
-    <Container style={{padding:'2em 12em 2em 12em'}}>
-      <h1 style={{textAlign:'center', fontSize:'3em', color:'white', marginTop:'2em'}}>
+    <Container style={{padding:'2em 12em'}}>
+      <h1 className="pergola__title">
         { pergolaData.title }
       </h1>
       <p className="pergola__description">
@@ -19,12 +19,12 @@ export const Pergola = () => {
     </Container>
     <Container>
       <Row>
-        { pergolaData.link.map( item => (
-        <Col md={6} style={{ marginBottom:'3em', paddingLeft:'0.5em', paddingRight:'0.5em'}}>
+        { pergolaData.link.map( (item, ind) => (
+        <Col md={6} style={{ marginBottom:'3em', paddingLeft:'0.5em', paddingRight:'0.5em'}} key={`pergola_col_${ind}`}>
           <a href={item.url}>
-            <img src={item.src} className="img-thumbnail" style={{width:'100%', height:'20em', objectFit:'cover'}} />
+            <img src={item.src} className="img-thumbnail pergola__item__img" alt=''/>
           </a>
-          <p style={{fontSize:'1.2em', color:'white', textAlign:'center', marginTop:'1em'}}>{item.title}</p>
+          <p className='pergola__item__title'>{item.title}</p>
         </Col>
         ))}
       </Row>

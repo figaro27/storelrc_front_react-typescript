@@ -231,8 +231,8 @@ export const Demande = () => {
 
               {
                 file_arr.map( (item, index) => (
-                  <>
-                  <div className="demande-file-container">
+
+                  <div className="demande-file-container" key={`demande_file_${index}`}>
                     <Button onClick={(e)=>{imageBtnClick(e, index)}} className="demande-file-btn">
                       { file_name_state_arr[index] !== '' ? <FaRegCheckCircle />: <FaUpload />}
                       {file_label_arr[index]}</Button>
@@ -240,7 +240,7 @@ export const Demande = () => {
                       <input type="file" style={{display:'none'}} ref={file_ref_arr[index]}
                         onChange={(e:any)=>{setFieldValue(file_arr[index], e.currentTarget.files[0]); setStates(index, e.currentTarget.files[0].name)}}/>
                   </div>
-                  </>
+
                 ))
               }
 

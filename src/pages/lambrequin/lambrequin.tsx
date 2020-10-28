@@ -42,8 +42,8 @@ export const Lambrequin = () => {
           <Col md={6}>
             <div className="luminous__carousel-section" >
               <Carousel controls={false} fade={true} >
-                {images.map( image => (
-                <Carousel.Item>
+                {images.map( (image, index) => (
+                <Carousel.Item key={`lambrequin_carousel_${index}`}>
                   <img
                     src={image}
                     alt="First slide"
