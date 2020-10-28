@@ -1,12 +1,10 @@
 
 .home-barparallax-section {
     width: 100%;
-    height: 300px;
+    height: 400px;
     min-height: 300px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
     overflow: hidden;
 }
 .home-barparallax-bar, .home-barparallax-rest {
@@ -33,6 +31,8 @@
 .home-barparallax__container {
     align-items:center;
     margin: auto;
+
+    overflow: hidden;
 }
 
 .home-barparallax-text {
@@ -44,6 +44,9 @@
     margin: auto;
     padding: 24px;
     opacity: 0.9;
+}
+.barparallax-img {
+    transform: translateY(-25%);
 }
 
 
