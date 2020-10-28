@@ -1,9 +1,7 @@
 // src/components/main.tsx
 import React from 'react';
-import { useState } from 'react';
 
 import './parallax.scss';
-
 interface ParallaxProps {
   title: string,
   image: string,
@@ -11,7 +9,6 @@ interface ParallaxProps {
 
 export const Parallax: React.SFC<ParallaxProps> = (props) => {
   const image1 = props.image;
-  const [offset, setOffset] = useState(0);
 
   return (
     <>
@@ -30,8 +27,6 @@ export const Parallax: React.SFC<ParallaxProps> = (props) => {
             </h1>
           </div>
       </section>
-
-
     </div>
     </>
  );

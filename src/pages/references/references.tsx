@@ -13,8 +13,8 @@ export const References = () => {
       </p>
       <Row>
         {
-          brandsData.map( image => (
-            <Col md={3}>
+          brandsData.map( (image, ind) => (
+            <Col md={3} key={`references_img_${ind}`}>
               <img src={image} className="references-image" alt=''/>
             </Col>
           ))
