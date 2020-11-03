@@ -3,7 +3,9 @@ import { Container, Card, Form, Button } from 'react-bootstrap';
 import { Formik, Field } from 'formik';
 import { FaUpload, FaRegCheckCircle } from 'react-icons/fa';
 import * as Yup from 'yup';
-import './demande.scss'
+import API from 'utils/api';
+import EndPoints from 'utils/endpoints';
+import './demande.scss';
 
 const DemandeSchema = Yup.object().shape({
   commercialName: Yup.string().required('Required'),
@@ -147,17 +149,12 @@ export const Demande = () => {
   }
 
   const sendQuote = (data: any) => {
-    fetch('https://localhost:8000/api/quote', {
-      method: 'POST',
-      body: JSON.stringify(data)
+    API.post(EndPoints.QUOTE, data).then(response => {
+      return response;
     })
-      .then(response => response.json())
-      .then(response => {
-        return response;
-      })
-      .catch(error => {
-        return error;
-      });
+    .catch(error => {
+      return error;
+    });
     return 'server error'
   }
 

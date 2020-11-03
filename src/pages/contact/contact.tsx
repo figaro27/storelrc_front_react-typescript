@@ -2,23 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { Container, Col, Row } from "react-bootstrap";
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
+import API from 'utils/api';
+import EndPoints from 'utils/endpoints';
 
-import './contact.scss'
+import './contact.scss';
 
 const sendContact = (data: any) => {
 
-    fetch('https://localhost:8000/api/contact', {
-      method: 'POST',
-      body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(response => {
-        return response;
-      })
-      .catch(error => {
-        return error;
-      });
-    return 'server error'
+  API.post(EndPoints.CONTACT, data).then(response => {
+    return response;
+  })
+  .catch(error => {
+    return error;
+  });
+
+  return 'server error';
 
 };
 
