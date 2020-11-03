@@ -82,35 +82,83 @@ export const Demande = () => {
     for(let i = 1; i < 4; i++){
       let element = <div style={{ display: noSouhaitee<i ? 'none': 'block' }} key={`demande_souhaitee_${i}`}>
           <label>{`Valance #${i}`}</label><br/>
-          <label>Luminous: <Field type="radio" name={`lumineux${i+1}`} value="oui"/> Yes </label>
-          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`lumineux${i+1}`} value="non"/> No</label><br/>
+          <label>Luminous: <Field type="radio" name={`lumineux${i}`} value="oui"/> Yes </label>
+          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`lumineux${i}`} value="non"/> No</label><br/>
 
           <label className="demande-input">
             {`Length:`}
-            <Field type="text" name={`longueur${i+1}`} className="demande-input"/></label>
+            <Field type="text" name={`longueur${i}`} className="demande-input"/></label>
 
           <label className="demande-input">
             {`Height:`}
-            <Field type="text" name={`hauteur${i+1}`} className="demande-input"/></label>
+            <Field type="text" name={`hauteur${i}`} className="demande-input"/></label>
 
           <label className="demande-input">{`Text / Logo Alignment:`}</label>
-          <label><Field type="radio" name={`positionnement${i+1}`} value="oui"/> Left</label>
-          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`positionnement${i+1}`} value="non"/> Center</label>
-          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`positionnement${i+1}`} value="non"/> Right</label><br/>
+          <label><Field type="radio" name={`positionnement${i}`} value="left"/> Left</label>
+          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`positionnement${i}`} value="center"/> Center</label>
+          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`positionnement${i}`} value="right"/> Right</label><br/>
 
           <label className="demande-input">
             {`Texte (flocage) n°${i}`}
-            <Field type="text" name={`texte_flocage${i+1}`} className="demande-input"/></label>
+            <Field type="text" name={`texte_flocage${i}`} className="demande-input"/></label>
 
           <label className="demande-input">
             {`Couleur du texte n°${i}`}
-            <Field type="text" name={`couleur_texte${i+1}`} className="demande-input"/></label>
+            <Field type="text" name={`couleur_texte${i}`} className="demande-input"/></label>
 
           <div className="demande-invalid-container"></div>
           </div>
       html.push(element)
     }
     return Object.values(html);
+  }
+
+  const onSubmit = (data: any) => {
+    let data_quote = {...data};
+    let valance = [];
+
+    for(let i = 1; i < 4; i++){
+      let temp = {
+        lumineux:'',
+        longueur: '',
+        hauteur: '',
+        positionnement: '',
+        texte_flocage: '',
+        couleur_texte: '',
+      };
+      temp['lumineux'] = data_quote[`lumineux${i}`];
+      delete data_quote[`lumineux${i}`];
+      temp['longueur'] = data_quote[`longueur${i}`];
+      delete data_quote[`longueur${i}`];
+      temp['hauteur'] = data_quote[`hauteur${i}`];
+      delete data_quote[`hauteur${i}`];
+      temp['positionnement'] = data_quote[`positionnement${i}`];
+      delete data_quote[`positionnement${i}`];
+      temp['texte_flocage'] = data_quote[`texte_flocage${i}`];
+      delete data_quote[`texte_flocage${i}`];
+      temp['couleur_texte'] = data_quote[`couleur_texte${i}`];
+      delete data_quote[`couleur_texte${i}`];
+      if(noSouhaitee > 0 && noSouhaitee >= i) valance.push(temp)
+    }
+
+    data_quote['souhaitee_arr'] = [...valance]
+    const res = sendQuote(data_quote);
+    console.log(res)
+  }
+
+  const sendQuote = (data: any) => {
+    fetch('https://localhost:8000/api/quote', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(response => {
+        return response;
+      })
+      .catch(error => {
+        return error;
+      });
+    return 'server error'
   }
 
   return (
@@ -132,42 +180,61 @@ export const Demande = () => {
                 services: '',
                 precisez: '',
                 no_souhaitee: 0,
-                souhaitee_arr: [],
+
+                color: '',
                 site: '',
                 file_logo: null,
                 file_photo1: null,
                 file_photo2: null,
                 file_photo3: null,
+
+                lumineux1: '',
+                longueur1: 0,
+                hauteur1: 0,
+                positionnement1: '',
+                texte_flocage1: '',
+                couleur_texte1: '',
+
+                lumineux2: '',
+                longueur2: 0,
+                hauteur2: 0,
+                positionnement2: '',
+                texte_flocage2: '',
+                couleur_texte2: '',
+
+                lumineux3: '',
+                longueur3: 0,
+                hauteur3: 0,
+                positionnement3: '',
+                texte_flocage3: '',
+                couleur_texte3: ''
               }}
               validationSchema={DemandeSchema}
-              onSubmit={values => {
-                // same shape as initial values
-                alert('values');
-              }}
+              onSubmit={ onSubmit }
             >
-          {({ errors, isSubmitting, touched, values, setFieldValue }) => (
-            <Form style={{margin:'2em 0.5em 1em 0.5em'}}>
-              <Field type="text" name="commercialName" className="demande-input" placeholder="*Company name" />
+          {({ errors, isSubmitting, touched, values, setFieldValue, handleSubmit }) => (
+            <Form style={{margin:'2em 0.5em 1em 0.5em'}} onSubmit = { handleSubmit } >
+              <Field type="text" name="commercialName" className="demande-input" placeholder="*Company name" required={true}/>
               <div className="demande-invalid-container">
                 { touched.commercialName && errors.commercialName ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
 
-              <Field type="text" name="name" className="demande-input" placeholder="*Fullname" />
+              <Field type="text" name="name" className="demande-input" placeholder="*Fullname" required={true}/>
               <div className="demande-invalid-container">
                 { touched.name && errors.name ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
 
-              <Field type="email" name="email" className="demande-input" placeholder="*Email" />
+              <Field type="email" name="email" className="demande-input" placeholder="*Email" required={true}/>
               <div className="demande-invalid-container">
                 { touched.email && errors.email ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
 
-              <Field type="text" name="telephone" className="demande-input" placeholder="*Phone" />
+              <Field type="text" name="telephone" className="demande-input" placeholder="*Phone" required={true}/>
               <div className="demande-invalid-container">
                 { touched.telephone && errors.telephone ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
 
-              <Field type="text" name="ville + {{ index }}" className="demande-input" placeholder="*City" />
+              <Field type="text" name="ville" className="demande-input" placeholder="*City" required={true}/>
               <div className="demande-invalid-container">
                 { touched.ville && errors.ville ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
@@ -185,7 +252,7 @@ export const Demande = () => {
               </div>
 
               { values.domaine === 'autre' ?
-                <><Field type="text" name="precisez" className="demande-input" placeholder="*Précisez" />
+                <><Field type="text" name="precisez" className="demande-input" placeholder="*Précisez" required={true}/>
                   <div className="demande-invalid-container">
                     { touched.precisez && errors.precisez ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
                     </div>
@@ -218,7 +285,7 @@ export const Demande = () => {
                   {
                     renderSouhaitee()
                   }
-                  <Field type="text" name="site" className="demande-input" placeholder="Valance Color or Reference" />
+                  <Field type="text" name="color" className="demande-input" placeholder="Valance Color or Reference"/>
                   <div className="demande-invalid-container"></div>
                 </>:
                 <>
@@ -227,7 +294,7 @@ export const Demande = () => {
               <Field type="text" name="precisions" component="textarea" className="demande-input" placeholder="More info about your request"/>
                 <div className="demande-invalid-container"></div>
 
-              <Field type="text" name="site" className="demande-input" placeholder="Website" />
+              <Field type="text" name="site" className="demande-input" placeholder="Website"/>
 
               {
                 file_arr.map( (item, index) => (
@@ -245,7 +312,7 @@ export const Demande = () => {
               }
 
               <div className="demande-invalid-container"></div>
-              <Button type="submit" variant='block' className="demande-submit" disabled={isSubmitting}>Send</Button>
+              <Button type="submit" variant='block' className="demande-submit">Send</Button>
 
             </Form>
           )}

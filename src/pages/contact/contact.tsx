@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Col, Row } from "react-bootstrap";
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
 import './contact.scss'
 
+const sendContact = (data: any) => {
+
+    fetch('https://localhost:8000/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(response => {
+        return response;
+      })
+      .catch(error => {
+        return error;
+      });
+    return 'server error'
+
+};
+
 const SignupSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
   telephone: Yup.string().required('Required'),
-  commercial:Yup.string().required('Required'),
-  secteur:Yup.string(),
+  business:Yup.string().required('Required'),
+  activity:Yup.string(),
   message:Yup.string().required('Required')
 });
 
-
 export const Contact = () => {
-  const onSubmit = () => {
-    console.log("Submit");
+  const onSubmit = (data: any) => {
+    const res = sendContact(data)
+    alert(res)
   }
 
   return (
@@ -38,20 +55,20 @@ export const Contact = () => {
                 name: '',
                 email: '',
                 telephone: '',
-                commercial: '',
-                secteur: '',
+                business: '',
+                activity: '',
                 message: ''
               }}
               validationSchema={ SignupSchema }
               onSubmit={ onSubmit }
             >
-              {({ errors, touched }) => (
-                <Form>
+              {({ errors, touched, handleSubmit }) => (
+                <Form  onSubmit = { handleSubmit } >
                   <Field name="name" className={touched.name && errors.name ? 'contact-form-input-invalid': 'contact-form-input'} placeholder="Name *" required={true}/>
                   <Field name="email" className={touched.email && errors.email ? 'contact-form-input-invalid': 'contact-form-input'} type="email" placeholder="Email *" required={true}/>
                   <Field name="telephone" className={touched.telephone && errors.telephone ? 'contact-form-input-invalid': 'contact-form-input'} placeholder="Phone *" required={true}/>
-                  <Field name="commercial" className={touched.commercial && errors.commercial ? 'contact-form-input-invalid': 'contact-form-input'} placeholder=" Business Name *" required={true}/>
-                  <Field name="secteur" className={touched.secteur && errors.secteur ? 'contact-form-input-invalid': 'contact-form-input'} placeholder="Activity / City" />
+                  <Field name="business" className={touched.business && errors.business ? 'contact-form-input-invalid': 'contact-form-input'} placeholder=" Business Name *" required={true}/>
+                  <Field name="activity" className={touched.activity && errors.activity ? 'contact-form-input-invalid': 'contact-form-input'} placeholder="Activity / City" />
                   <Field component='textarea' rows="5" name="message" className={touched.message && errors.message ? 'contact-form-input-invalid': 'contact-form-input'} placeholder="Message *" required={true}/>
                   <div style={{width:'100%', textAlign:'right'}}>
                     <button type="submit" className="contact-form-submit">
