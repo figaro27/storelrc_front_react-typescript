@@ -28,7 +28,7 @@ class Detail extends React.Component<DetailsProps, any> {
 
     if (this.state.redirect) {
       return (
-        <Redirect to="/demande-de-devis" push/>
+        <Redirect to="/quote-request" push/>
       )
     }
 
@@ -57,7 +57,7 @@ class Detail extends React.Component<DetailsProps, any> {
             <Col md={6} style={{textAlign:'center'}}>
               <p style={{color:'white', textAlign:'justify', fontSize:'16px'}} dangerouslySetInnerHTML={{__html: detail.text2}}/>
 
-              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>{this.set_url('/demande-de-devi')}}>Demande de devis</Button>
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>{this.set_url('/quote-request')}}>Quote request</Button>
             </Col>
 
             <Col md={6}>

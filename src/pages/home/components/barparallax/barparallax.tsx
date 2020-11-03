@@ -9,12 +9,12 @@ export const BarParallax = () => {
 
   const barText = [
     {
-      text: 'Allumé, votre lambrequin lumineux mettra en avant votre enseigne, votre logo, et votre établissement, qui n\'échappera pas à l\'oeil des passants',
+      text: 'When turned on, your luminous valance will highlight your sign, your logo, and your establishment, which will not escape the eye of passers-by',
       class: 'home-barparallax-bar',
       image: 'https://static.wixstatic.com/media/e49d9d_12a9650996c542cda2f3c50f62e4b130~mv2_d_6016_4016_s_4_2.jpg'
     },
     {
-      text:'Eteint, votre lambrequin lumineux restera original et attractif, etne dénaturera en aucun cas votre store, car parfaitement intégré à celui-ci',
+      text:'Switched off, your luminous valance will remain original and attractive, and will in no way distort your awning, because it is perfectly integrated into it',
       class: 'home-barparallax-rest',
       image:'https://static.wixstatic.com/media/e49d9d_3ac66eb9c38d4b7c88e97d451becf40d~mv2_d_6016_4016_s_4_2.jpg'
     }

@@ -10,22 +10,22 @@ export const Home = () => {
       <Parallax />
       <h2 className="home-font2">
         <br/>Store Led<br/>
-        Expert des enseignes lumineuses
+        luminous signs expert
       </h2>
       <p className="home-text1">
-        Vous avez un restaurant ? Un commerce ? Un hôtel ? Une agence ?<br/>
-        Vous souhaitez vous démarquez de vos voisins et rendre votre<br/>
-        établissement plus attrayant durant la nuit ?
+      Do you have a restaurant? A shop? A Hotel? An agency? <br/>
+       You want to stand out from your neighbors and make your <br/>
+       establishment more attractive during the evening and night?
       </p>
       <p className="home-text1">
-        Optez pour une enseigne lumineuse intégrée dans votre lambrequin.
+        Opt for an luminous sign integrated into your valance.
       </p>
       <p className="home-text1">
-        Une solution peu coûteuse, rapide et novatrice, qui vous permettra d'attirer<br/>
-        l'oeil de tous les passants, tout en mettant en valeur votre établissement !
+      An inexpensive, fast and innovative solution that will allow you to attract <br/>
+       the eye of all passers-by, while highlighting your establishment!
       </p>
       <div style={{ textAlign:'center'}}>
-        <Button variant="outline-light" className="home-btn-en">En savoir plus</Button>
+        <Button variant="outline-light" className="home-btn-en">Find out more</Button>
       </div>
       <BarParallax/>
       <PhotoGallery/>

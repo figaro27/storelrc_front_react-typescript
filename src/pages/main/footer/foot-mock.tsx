@@ -1,17 +1,15 @@
 export const contactInfo = [
-  "74 Chemin de L'Olivet",
-  "06110 Le Cannet",
-  "Tél : 04 93 90 81 41",
-  "Mob : 06 69 14 17 13",
-  "contact@storeled.fr"
+  "401 E 8TH Street, Suite 1716",
+  "Sioux Falls, SD 57103",
+  "hello@storeled.com"
 ];
 
 export const storeLinks = [
   {
-    name: 'Lambrequin lumineux',
-    path: '/lambrequin-lumineux',
+    name: 'Luminous valances',
+    path: '/luminous-valances',
   },
-  {
+  /*{
     name: 'Stores extérieurs',
     path: '/store',
   },
@@ -30,17 +28,17 @@ export const storeLinks = [
   {
     name: 'Radiants',
     path: '/radiants',
-  },
+  },*/
 ];
 
 export const otherLinks = [
   {
-    name: 'Nos références',
-    path: '/nos-references',
+    name: 'Our references',
+    path: '/our-references',
   },
   {
-    name: 'Qui sommes-nous',
-    path: '/qui-sommes-nous',
+    name: 'Who are we?',
+    path: '/who-we-are',
   },
   {
     name: 'F.A.Q.',
@@ -51,5 +49,3 @@ export const otherLinks = [
     path: '/contact',
   },
 ]
-
-

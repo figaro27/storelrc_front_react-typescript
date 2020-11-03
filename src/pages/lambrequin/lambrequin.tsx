@@ -21,21 +21,21 @@ export const Lambrequin = () => {
     <>
       <Parallax />
       <h1 className="luminous__banner">
-        Le lambrequin lumineux : soyez plus visible !
+        The luminous valance: be more visible!
       </h1>
       <Container>
         <Row>
           <Col md={6} >
             <p className="luminous__description">
-              De plus en plus présent dans le paysage urbain, le lambrequin lumineux se veut original et très efficace pour attirer l'oeil des passants, et donc vous rendre plus visible la nuit.
-              <br/><br/>
-              Fonctionnant grâce à des LED intégrées directement dans votre store, le lambrequin lumineux est discret, et peu coûteux, tant par sa simple et rapide installation que par sa faible consommation d'énergie.
-              <br/><br/>
-              Très résistant au soleil, à la pluie et au vent, ce type d'enseigne lumineuse peut s'adapter à n'importe quel type de logo ou typographie, et peut être proposé aux couleurs de votre choix.
-              <br/><br/>
-              Nous réalisons une étude de faisabilité complète en amont, afin de déterminer toutes les contraintes du projet, et vous proposer la configuration de vos lambrequins lumineux la plus adaptée à votre enseigne.
-              <br/><br/>
-              Store Led peut également vous proposer du flocage de lambrequin traditionnel, avec du flex spécial lambrequin, ou peinture, sur demande.
+            More and more present in the urban landscape, the luminous valance is original and very effective in attracting the eye of passers-by, and therefore making you more visible at night.
+            <br/> <br/>
+            Operating thanks to LEDs integrated directly into your awning, the luminous valance is discreet and inexpensive, both by its simple and quick installation and by its low energy consumption.
+            <br/> <br/>
+            Very resistant to sun, rain, snow and wind, this type of illuminated sign can be adapted to any type of logo or typography, and can be offered in the colors of your choice.
+            <br/> <br/>
+            We carry out a complete feasibility study upstream, in order to determine all the constraints of the project, and offer you the configuration of your luminous valances the most suited to your sign.
+            <br/> <br/>
+            Store Led can also offer you traditional valance flocking, with special valance flex, or painting, on request.
             </p>
 
           </Col>
@@ -56,8 +56,8 @@ export const Lambrequin = () => {
             </div>
             <div style={{ textAlign: 'center'}}>
               <p className="luminous__carousel-description">
-                Contactez-nous pour plus d'informations sur nos services, nos tarifs, ou pour obtenir un devis ou un rendez-vous avec l'un de nos conseillers.</p>
-                <Button variant="outline-light" size="lg" className="luminous__button" onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
+                Contact us for more information on our services, our prices, or to obtain a quote or an appointment with one of our advisers.</p>
+                <Button variant="outline-light" size="lg" className="luminous__button" onClick={e=>history.push('/quote-request')}>Quote request</Button>
             </div>
 
           </Col>

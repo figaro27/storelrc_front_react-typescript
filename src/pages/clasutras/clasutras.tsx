@@ -19,7 +19,7 @@ export const Clasutras = () => {
           <Row className="claustras__description-section">
             <Col md={6} className="text-center">
               <label dangerouslySetInnerHTML={{__html: clasutrasData.description}}/>
-              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>history.push('/quote-request')}>Quote request</Button>
             </Col>
             <Col md={6}>
               <div className="clasturas__carousel-container" >

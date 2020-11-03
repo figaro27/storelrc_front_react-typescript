@@ -33,8 +33,8 @@ export const Parallax = () => {
           />
 
           <div className="lambrequin-parallax_text_section">
-            <h1 className="lambrequin-parallax_text">Le lambrequin lumineux : <br/>
-              original et attractif
+            <h1 className="lambrequin-parallax_text">The luminous valance: <br/>
+              original, classy and attractive
             </h1>
           </div>
 

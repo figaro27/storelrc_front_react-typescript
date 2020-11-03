@@ -1,15 +1,15 @@
 export const header = [
   {
-    name: 'Accueil',
+    name: 'Home',
     path: '/',
     children: []
   },
   {
-    name: 'Lambrequin lumineux',
-    path: '/lambrequin-lumineux',
+    name: 'Luminous valances',
+    path: '/luminous-valances',
     children: []
   },
-  {
+  /*{
     name: 'Nos Services',
     path: '',
     children: [
@@ -34,15 +34,15 @@ export const header = [
         path: '/radiants'
       }
     ]
-  },
+  },*/
   {
-    name: 'Realisations',
-    path: '/nos-realisations',
+    name: 'Achievements',
+    path: '/our-achievements',
     children: []
   },
   {
     name: 'References',
-    path: '/nos-references',
+    path: '/our-references',
     children: []
   },
   {

@@ -81,22 +81,22 @@ export const Demande = () => {
     let html = [];
     for(let i = 1; i < 4; i++){
       let element = <div style={{ display: noSouhaitee<i ? 'none': 'block' }} key={`demande_souhaitee_${i}`}>
-          <label>{`Lambrequin n°${i} : Lumineux`}</label><br/>
-          <label><Field type="radio" name={`lumineux${i+1}`} value="oui"/> Oui </label>
-          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`lumineux${i+1}`} value="non"/> Non</label><br/>
+          <label>{`Valance #${i}`}</label><br/>
+          <label>Luminous: <Field type="radio" name={`lumineux${i+1}`} value="oui"/> Yes </label>
+          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`lumineux${i+1}`} value="non"/> No</label><br/>
 
           <label className="demande-input">
-            {`Longueur Lambrequin n°${i}`}
+            {`Length:`}
             <Field type="text" name={`longueur${i+1}`} className="demande-input"/></label>
 
           <label className="demande-input">
-            {`Hauteur Lambrequin n°${i}`}
+            {`Height:`}
             <Field type="text" name={`hauteur${i+1}`} className="demande-input"/></label>
 
-          <label className="demande-input">{`Positionnement du texte / logo n°${i}`}</label>
-          <label><Field type="radio" name={`positionnement${i+1}`} value="oui"/> Gauche</label>
-          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`positionnement${i+1}`} value="non"/> Milieu</label>
-          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`positionnement${i+1}`} value="non"/> Droite</label><br/>
+          <label className="demande-input">{`Text / Logo Alignment:`}</label>
+          <label><Field type="radio" name={`positionnement${i+1}`} value="oui"/> Left</label>
+          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`positionnement${i+1}`} value="non"/> Center</label>
+          <label style={{marginLeft:'0.5em'}}><Field type="radio" name={`positionnement${i+1}`} value="non"/> Right</label><br/>
 
           <label className="demande-input">
             {`Texte (flocage) n°${i}`}
@@ -115,11 +115,11 @@ export const Demande = () => {
 
   return (
     <Container className="demande-container">
-      <p className="demande-title">Demande de devis</p>
+      <p className="demande-title">Quote request</p>
       <Card >
         <Card.Body>
-          <Card.Title className="demande-card-title">Demande de devis</Card.Title>
-          <Card.Text className="mb-2 text-muted">Pour toute demande de devis, vous pouvez utiliser le formulaire ci-dessous. Notre équipe vous répondra dans les plus brefs délais.</Card.Text>
+          <Card.Title className="demande-card-title">Quote request</Card.Title>
+          <Card.Text className="mb-2 text-muted">For any quote request, you can use the form below. Our team will get back to you as soon as possible.</Card.Text>
 
           <Formik
               initialValues={{
@@ -147,12 +147,12 @@ export const Demande = () => {
             >
           {({ errors, isSubmitting, touched, values, setFieldValue }) => (
             <Form style={{margin:'2em 0.5em 1em 0.5em'}}>
-              <Field type="text" name="commercialName" className="demande-input" placeholder="*Nom commercial" />
+              <Field type="text" name="commercialName" className="demande-input" placeholder="*Company name" />
               <div className="demande-invalid-container">
                 { touched.commercialName && errors.commercialName ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
 
-              <Field type="text" name="name" className="demande-input" placeholder="*Prénom / NOM" />
+              <Field type="text" name="name" className="demande-input" placeholder="*Fullname" />
               <div className="demande-invalid-container">
                 { touched.name && errors.name ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
@@ -162,23 +162,23 @@ export const Demande = () => {
                 { touched.email && errors.email ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
 
-              <Field type="text" name="telephone" className="demande-input" placeholder="*Téléphone" />
+              <Field type="text" name="telephone" className="demande-input" placeholder="*Phone" />
               <div className="demande-invalid-container">
                 { touched.telephone && errors.telephone ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
 
-              <Field type="text" name="ville + {{ index }}" className="demande-input" placeholder="*Ville" />
+              <Field type="text" name="ville + {{ index }}" className="demande-input" placeholder="*City" />
               <div className="demande-invalid-container">
                 { touched.ville && errors.ville ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
               </div>
 
               <Field as="select" name="domaine" className="demande-input">
-                <option> - *Domaine d'activité - </option>
-                <option value='rest'>Restaurant / Café / Bar</option>
-                <option value='hotel'>Hôtel</option>
-                <option value='commerce'>Commerce</option>
-                <option value='agence'>Agence</option>
-                <option value='autre'>Autre</option>
+                <option> - *Field of activity - </option>
+                <option value='rest'>Restaurant / Cafe / Bar</option>
+                <option value='hotel'>Hotel</option>
+                <option value='commerce'>Store</option>
+                <option value='agence'>Agency</option>
+                <option value='autre'>Other</option>
               </Field>
               <div className="demande-invalid-container">
                 { touched.domaine && errors.domaine ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
@@ -192,12 +192,12 @@ export const Demande = () => {
                 </>: null }
 
               <Field as="select" name="services" className="demande-input">
-                <option  key='demande_service_null'> - *Type de services souhaité - </option>
-                <option value='lambrequin' key='demande_service_lambrequin'>Lambrequin / Lambrequin lumineux</option>
-                <option value='vitrophanie' key='demande_service_vitrophanie'>Vitrophanie / Vitrophanie lumineuse</option>
+                <option  key='demande_service_null'> - *Type of service desired- </option>
+                <option value='lambrequin' key='demande_service_lambrequin'>Luminous Valance</option>
+                {/* <option value='vitrophanie' key='demande_service_vitrophanie'>Vitrophanie / Vitrophanie lumineuse</option>
                 <option value='flocage' key='demande_service_flocage'>Flocage / Flocage lumineux</option>
                 <option value='kakemono' key='demande_service_kakemono'>Kakemono / Kakemono lumineux</option>
-                <option value='store' key='demande_service_store'>Store / Pergola / Habillage de façade</option>
+                <option value='store' key='demande_service_store'>Store / Pergola / Habillage de façade</option> */}
               </Field>
               <div className="demande-invalid-container">
                 { touched.services && errors.services ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
@@ -206,11 +206,11 @@ export const Demande = () => {
 
               { values.services === 'lambrequin' ?
                 <><Field as="select" name="no_souhaitee" className="demande-input" onChange={(e:any)=>changeNoSouhaitee(e, values)}>
-                  <option key='demande_service_0'> - *Type de services souhaité - </option>
+                  <option key='demande_service_0'> - *Quantity - </option>
                   <option value='1' key='demande_service_1'>1</option>
                   <option value='2' key='demande_service_2'>2</option>
                   <option value='3' key='demande_service_3'>3</option>
-                  <option value='4' key='demande_service_4'>4 ou plus</option>
+                  <option value='4' key='demande_service_4'>4 or more</option>
                   </Field>
                   <div className="demande-invalid-container">
                     { touched.no_souhaitee && errors.no_souhaitee ? <p className="demande-invalid-text">Please enter a valid input</p>: null}
@@ -218,16 +218,16 @@ export const Demande = () => {
                   {
                     renderSouhaitee()
                   }
-                  <Field type="text" name="site" className="demande-input" placeholder="Couleur lambrequin(s) ou Référence couleur" />
+                  <Field type="text" name="site" className="demande-input" placeholder="Valance Color or Reference" />
                   <div className="demande-invalid-container"></div>
                 </>:
                 <>
                 </> }
 
-              <Field type="text" name="precisions" component="textarea" className="demande-input" placeholder="Précisions sur votre demande"/>
+              <Field type="text" name="precisions" component="textarea" className="demande-input" placeholder="More info about your request"/>
                 <div className="demande-invalid-container"></div>
 
-              <Field type="text" name="site" className="demande-input" placeholder="Site web" />
+              <Field type="text" name="site" className="demande-input" placeholder="Website" />
 
               {
                 file_arr.map( (item, index) => (
@@ -245,7 +245,7 @@ export const Demande = () => {
               }
 
               <div className="demande-invalid-container"></div>
-              <Button type="submit" variant='block' className="demande-submit" disabled={isSubmitting}>Envoyer</Button>
+              <Button type="submit" variant='block' className="demande-submit" disabled={isSubmitting}>Send</Button>
 
             </Form>
           )}

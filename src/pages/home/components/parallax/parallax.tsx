@@ -43,7 +43,7 @@ export const Parallax = () => {
           </div>
           <div className='class'>
               <h2 className="home-font2">
-                  Spécialiste du lambrequin lumineux
+                Luminous valance specialist
               </h2>
           </div>
         </div>

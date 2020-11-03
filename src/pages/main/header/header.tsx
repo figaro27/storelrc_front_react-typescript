@@ -68,7 +68,7 @@ export const Header = () => {
               }
             </Nav>
             <Nav className="header__button">
-              <Button variant="outline-light" block onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
+              <Button variant="outline-light" block onClick={e=>history.push('/quote-request')}>Quote request</Button>
             </Nav>
           </Navbar.Collapse>
         </Row>

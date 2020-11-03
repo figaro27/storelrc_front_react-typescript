@@ -40,23 +40,23 @@ export const Footer = () => {
                 ))
               }
             </div>
-            <Button variant="outline-light" size="lg" block style={{margin: '2em 0 0 0'}} onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
+            <Button variant="outline-light" size="lg" block style={{margin: '2em 0 0 0'}} onClick={e=>history.push('/quote-request')}>Quote request</Button>
           </div>
         </Col>
 
         <Col md={4}>
           <div className="footer-social-section">
             <p className="footer-contact-text">
-              Retrouvez-nous sur :
+              Find us everywhere:
             </p>
             <div className="footer-outsite-img-section">
-              <a href='https://www.facebook.com/storeled' style={{margin: '1em'}}>
+              <a href='https://www.facebook.com/storeled' style={{margin: '1em'}} target="_blank"> 
                 <img className="footer-outsite-img"
                 alt="Facebook Social Icône" data-type="image"
                 style={{width: '39px', height: '39px'}}
                 src="https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png"/>
               </a>
-              <a href='https://www.instagram.com/accounts/login/?next=/store.led/' style={{margin: '1em'}}>
+              <a href='https://www.instagram.com/store.led/' style={{margin: '1em'}} target="_blank">
                 <img className="footer-outsite-img"
                 alt="Facebook Social Icône" data-type="image"
                 style={{width: '39px', height: '39px'}}
@@ -80,7 +80,8 @@ export const Footer = () => {
     <hr className="divider-horizontal-dotted"></hr>
     <Container>
       <p className="footer-copyright-text">
-        Storeled &copy; 2019 - Tous droits réservés - Mentions légales
+        Storeled &copy; 2020 - All rights reserved - Legal notice
+
       </p>
     </Container>
   </footer>

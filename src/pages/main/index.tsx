@@ -26,7 +26,7 @@ export const Main = () => {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/home" component={Home}/>
-          <Route exact path="/lambrequin-lumineux" component={Lambrequin}/>
+          <Route exact path="/luminous-valances" component={Lambrequin}/>
           <Route exact path="/store" component={Store}/>
           <Route exact path="/store/:name" component={StoreDetail}/>
           <Route exact path="/pergola" component={Pergola}/>
@@ -35,12 +35,12 @@ export const Main = () => {
           <Route exact path="/enseigne/:name" component={StoreDetail}/>
           <Route exact path="/claustras" component={Clasutras}/>
           <Route exact path="/radiants" component={Radiant}/>
-          <Route exact path="/nos-realisations" component={Realisations}/>
-          <Route exact path="/nos-references" component={References}/>
+          <Route exact path="/our-achievements" component={Realisations}/>
+          <Route exact path="/our-references" component={References}/>
           <Route exact path="/contact" component={Contact}/>
           <Route exact path="/faq" component={Faq}/>
-          <Route exact path="/qui-sommes-nous" component={Sommes}/>
-          <Route exact path="/demande-de-devis" component={Demande}/>
+          <Route exact path="/who-we-are" component={Sommes}/>
+          <Route exact path="/quote-request" component={Demande}/>
         </Switch>
       </div>
       <Footer />

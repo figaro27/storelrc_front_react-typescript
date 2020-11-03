@@ -21,7 +21,7 @@ export const Radiant = () => {
           <Row className="radiant-detail__description">
             <Col md={6}>
               <label dangerouslySetInnerHTML={{__html: radiantData.description}}/>
-              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>history.push('/demande-de-devis')}>Demande de devis</Button>
+              <Button variant="outline-light" size="lg" className='store-detail-demande-btn' onClick={e=>history.push('/quote-request')}>Quote request</Button>
             </Col>
             <Col md={6}>
               <div className="radiant-detail_carousel-container" >
