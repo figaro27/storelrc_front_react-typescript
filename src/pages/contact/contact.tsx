@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container, Col, Row } from "react-bootstrap";
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
@@ -8,16 +8,11 @@ import EndPoints from 'utils/endpoints';
 import './contact.scss';
 
 const sendContact = (data: any) => {
-
-  API.post(EndPoints.CONTACT, data).then(response => {
-    return response;
+  const config = { }
+  API.post(EndPoints.CONTACT, data, config).then(res => {
+    return res;
   })
-  .catch(error => {
-    return error;
-  });
-
   return 'server error';
-
 };
 
 const SignupSchema = Yup.object().shape({
@@ -32,7 +27,7 @@ const SignupSchema = Yup.object().shape({
 export const Contact = () => {
   const onSubmit = (data: any) => {
     const res = sendContact(data)
-    alert(res)
+    console.log(res)
   }
 
   return (

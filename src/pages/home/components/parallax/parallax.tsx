@@ -1,8 +1,17 @@
 // src/components/main.tsx
 import React from 'react';
 import { useEffect, useState } from 'react';
+import {Col, Row,} from 'react-bootstrap';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 
 import './parallax.scss';
+
+
 
 export const Parallax = () => {
   const image1 = "https://static.wixstatic.com/media/e49d9d_afa49dd49a924af5962574840e9f5f48~mv2.jpg";
@@ -18,6 +27,8 @@ export const Parallax = () => {
     };
   }, []);
 
+
+
   return (
     <>
     <div className="home-parallax">
@@ -31,23 +42,20 @@ export const Parallax = () => {
             filter: `brightness(60%)`
           }}
           />
-        <div>
-          <div className="home-parallax-text">
-              <img
+        <div  className="home-parallax-text-sections">
+            <div className="home-parallax-text">
+                <img
                   style={{
-                    width:'213px',
-                    height:'130px',
+                    width:'15em',
+                    height:'8em',
                     }}
                     alt="StoreledNOIR-2-pagepng_edited.png" data-type="image"
                     src="https://static.wixstatic.com/media/e49d9d_2f69a5b64a9f454b8503fc6a75c44a8b~mv2.png"/>
-          </div>
-          <div className='class'>
-              <h2 className="home-font2">
-                Luminous valance specialist
-              </h2>
-          </div>
+              </div>
+            <div>
+              <label className="home-font2">Luminous valance specialist</label>
+            </div>
         </div>
-
       </section>
     </div>
     </>

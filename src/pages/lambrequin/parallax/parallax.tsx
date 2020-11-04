@@ -28,14 +28,12 @@ export const Parallax = () => {
           className="lambrequin-parallax_img"
           style={{
             transform: `translateY(${offset * 0.7}px)`,
-
           }}
           />
-
           <div className="lambrequin-parallax_text_section">
-            <h1 className="lambrequin-parallax_text">The luminous valance: <br/>
+            <h3 className="lambrequin-parallax_text">The luminous valance: <br/>
               original, classy and attractive
-            </h1>
+            </h3>
           </div>
 
       </section>
